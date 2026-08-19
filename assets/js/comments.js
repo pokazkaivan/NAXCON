@@ -11,7 +11,7 @@
   if(typeof CommentLayer==='undefined')return;      /* модуль не підвантажився */
 
   var PROJECT='naxcon-wireframe';                   /* простір імен коментарів */
-  var SUPABASE={url:'',anonKey:''};                 /* порожньо = локальний режим */
+  var SUPABASE={url:'https://hlyxunkteycaqahjlsqj.supabase.co',anonKey:'sb_publishable_z9mFAcjtVxsgz-ArcXe8hg_RvkwWHWJ'};                 /* порожньо = локальний режим */
 
   var opts={projectId:PROJECT,version:'v1'};
   var start=function(){requestAnimationFrame(function(){CommentLayer.init(opts);});};
