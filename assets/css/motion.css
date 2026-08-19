@@ -1,0 +1,26 @@
+/* ═══ Поява елементів по скролу + інерційний скрол ═══
+   Реф — on.energy: елемент виїжджає знизу з затуханням, сусіди йдуть каскадом.
+   Вже анімовані блоки (Solutions, заливка тексту, штора, таби, Fakten, Warum)
+   не чіпаються — вони виключені зі списку в markReveals(). */
+[data-rv]{opacity:0;will-change:opacity,transform;
+  transition:opacity .72s cubic-bezier(.22,.61,.36,1),transform .72s cubic-bezier(.22,.61,.36,1),
+             clip-path .72s cubic-bezier(.22,.61,.36,1);
+  transition-delay:var(--rvD,0ms)}
+[data-rv="up"]{transform:translate3d(0,28px,0)}
+[data-rv="sm"]{transform:translate3d(0,16px,0)}
+[data-rv="side"]{transform:translate3d(-20px,0,0)}
+[data-rv="img"]{transform:scale(1.035)}
+[data-rv="line"]{clip-path:inset(0 0 100% 0);transform:translate3d(0,12px,0)}
+/* clip-path лишається ТІЛЬКИ для варіанта "line": раніше він застосовувався до
+   кожного показаного елемента й обрізав усе, що виходить за його межі —
+   зокрема превʼю 200×300 у рядку новини заввишки 76px. */
+.rvIn{opacity:1!important;transform:none!important}
+/* кінцевий стан ширший за елемент, щоб після витирання нічого не обрізалось */
+[data-rv="line"].rvIn{clip-path:inset(0 -20% -20% -20%)!important}
+/* поява сторінки при переході між маршрутами */
+#wf.rvPage{animation:rvPage .42s cubic-bezier(.22,.61,.36,1)}
+@keyframes rvPage{from{opacity:0;transform:translate3d(0,10px,0)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){
+  [data-rv]{opacity:1;transform:none;clip-path:none;transition:none}
+  #wf.rvPage{animation:none}
+}

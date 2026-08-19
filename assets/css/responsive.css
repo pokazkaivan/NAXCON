@@ -1,0 +1,81 @@
+/* ══════════ АДАПТАЦІЯ ПІД ПЛАНШЕТ І МОБІЛЬНИЙ ══════════
+   Підключається останнім, тож перекриває посекційні правила.
+   Робоча ширина вмісту: планшет 768px, мобільний 390px. */
+
+/* ── 1 · довгі німецькі складені слова не вилазять за екран ──
+   «Nutzungsbedingungen», «Modellbildung & Simulation», «Leistungsbereiche»
+   на 390px не вміщаються в рядок і виштовхували б блок за межі екрана. */
+body[data-vp="m"] #wf,body[data-vp="t"] #wf{overflow-wrap:break-word}
+body[data-vp="m"] #wf h1,body[data-vp="m"] #wf h2,body[data-vp="m"] #wf h3,
+body[data-vp="m"] .svheroT,body[data-vp="m"] .ctitle,body[data-vp="m"] .svtitle,
+body[data-vp="m"] .arH1,body[data-vp="m"] .arH2,body[data-vp="m"] .ptitle,
+body[data-vp="m"] .mtitle,body[data-vp="m"] .ftitle,body[data-vp="m"] .kinitT{
+  overflow-wrap:anywhere;hyphens:auto}
+
+/* ── 2 · типографічна шкала на мобільному ──
+   Частина заголовків мала мобільний розмір, частина ні. Зводимо до однієї
+   сходинки: 36 → 26, 32 → 24, 40 → 30. */
+body[data-vp="m"] .ctitle,
+body[data-vp="m"] .svtitle,
+body[data-vp="m"] .svcT,
+body[data-vp="m"] .nallT,
+body[data-vp="m"] .arRelT,
+body[data-vp="m"] .cmissT,
+body[data-vp="m"] .clocT,
+body[data-vp="m"] .kinitT{font-size:26px;line-height:31px;letter-spacing:-.2px}
+body[data-vp="m"] .arH3,
+body[data-vp="m"] .ptrustT,
+body[data-vp="m"] .artstats .sv,
+body[data-vp="m"] .jasideT{font-size:24px;line-height:30px}
+body[data-vp="m"] .arStatN{font-size:30px;line-height:38px}
+body[data-vp="t"] .ctitle,
+body[data-vp="t"] .svcT,
+body[data-vp="t"] .nallT,
+body[data-vp="t"] .arRelT,
+body[data-vp="t"] .cmissT,
+body[data-vp="t"] .clocT,
+body[data-vp="t"] .kinitT{font-size:30px;line-height:36px}
+
+/* ── 3 · фіксовані ширини, що лишались ширшими за екран ── */
+body[data-vp="m"] .svcards,
+body[data-vp="t"] .svcards{width:100%;flex:1 1 auto;min-width:0}
+body[data-vp="m"] .cnumCol.cn1,body[data-vp="m"] .cnumCol.cn2,body[data-vp="m"] .cnumCol.cn3,
+body[data-vp="t"] .cnumCol.cn1,body[data-vp="t"] .cnumCol.cn2,body[data-vp="t"] .cnumCol.cn3{
+  width:auto;flex:1 1 auto;min-width:0}
+
+/* ── 4 · ряди, що не переносились ──
+   Картка рекрутера: аватар 68 + gap 32 забирали половину екрана, лишаючи
+   імені смужку в 200px під кегль 32. */
+body[data-vp="m"] .kboxTop{flex-direction:column;gap:16px}
+body[data-vp="m"] .kboxLinks{flex-direction:column;gap:8px}
+body[data-vp="m"] .mpcard{flex-wrap:wrap;gap:12px}
+body[data-vp="m"] .mpcard .shot{width:100%;flex:1 1 100%;height:120px}
+body[data-vp="m"] .arMeta{flex-direction:row;flex-wrap:wrap;gap:4px 16px}
+body[data-vp="m"] .nfMeta{flex-direction:row;flex-wrap:wrap;gap:4px 16px}
+
+/* ── 5 · таблиця специфікацій і статті ──
+   Чотири колонки на 390px нечитабельні; лишаємо горизонтальний скрол,
+   але тільки для самої таблиці, а не для сторінки. */
+body[data-vp="m"] .arTable,body[data-vp="t"] .arTable{display:block;overflow-x:auto;white-space:nowrap}
+body[data-vp="m"] .arTable td,body[data-vp="m"] .arTable th{padding:10px 12px}
+
+/* ── 6 · дрібне ── */
+body[data-vp="m"] .kfileRow{flex-wrap:wrap;gap:6px 12px}
+body[data-vp="m"] .kfile{flex-direction:column;align-items:flex-start}
+body[data-vp="m"] .jmeta .r{flex-direction:column;gap:2px}
+body[data-vp="m"] .jmeta .k{width:auto;flex:1 1 auto}
+body[data-vp="m"] .gjob .go{margin-left:auto}
+body[data-vp="m"] img{max-width:100%;height:auto}
+
+/* ── 7 · рештки з аудиту ──
+   Вкладка документа має фіксовану висоту 56px без min-height: якщо підпис
+   переноситься, текст обрізається. Смуга й так гортається вбік, тож
+   лишаємо один рядок, але висоту робимо мінімальною, а не жорсткою. */
+.ltabs button{height:auto;min-height:56px}
+/* Ліва колонка Solutions: на вузькому шкала й картки в один ряд лишають
+   карткам надто мало — переносимо в колонку разом із рештою секції. */
+body[data-vp="m"] .psolL{flex-direction:column;gap:16px}
+body[data-vp="m"] .pprog{width:100%;flex:0 0 4px;height:4px;flex-direction:row}
+
+/* бейдж HQ у футері: дві літери, але жорстка висота 15px не лишає запасу */
+.fa .hq{height:auto;min-height:15px}

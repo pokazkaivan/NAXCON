@@ -1,0 +1,194 @@
+/* Fakten & Referenzen · Figma 3:801 (pixel parity) */
+.facts{overflow:visible}
+.fwrap{height:2400px;position:relative}
+body[data-vp="t"] .fwrap{height:2000px}
+body[data-vp="m"] .fwrap{height:auto}
+.fstick{position:sticky;top:0}
+body[data-vp="m"] .fstick{position:static}
+.fsec{padding:80px 32px;display:flex;flex-direction:column;align-items:center}
+body[data-vp="m"] .fsec{padding:56px 20px}
+.fsec>.fin{width:100%}
+.fhead{display:flex;flex-direction:column;gap:16px;align-items:flex-start}
+.fkick{font-family:var(--mono);font-size:11px;line-height:17.6px;letter-spacing:1.98px;text-transform:uppercase;color:var(--muted)}
+.ftitle{font-size:36px;font-weight:510;line-height:41.4px;letter-spacing:-.3509px;color:var(--fg);max-width:467px}
+body[data-vp="m"] .ftitle{font-size:26px;line-height:31px}
+.fbodyrow{display:flex;align-items:flex-start;width:100%;padding-top:32px}
+body[data-vp="m"] .fbodyrow,body[data-vp="t"] .fbodyrow{flex-direction:column;gap:40px}
+.fleft{flex:1 1 0;min-width:0;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;height:449px}
+body[data-vp="t"] .fleft,body[data-vp="m"] .fleft{height:auto;width:100%}
+.fnum{font-size:168px;font-weight:100;line-height:168px;letter-spacing:-6.72px;color:var(--fg);white-space:nowrap}
+body[data-vp="t"] .fnum{font-size:120px;line-height:120px;letter-spacing:-4.8px}
+body[data-vp="m"] .fnum{font-size:84px;line-height:84px;letter-spacing:-3.4px}
+.fcap{font-size:16px;line-height:25.6px;letter-spacing:-.3125px;color:var(--fg2);width:444px;max-width:100%;padding-top:24px}
+/* Зміна цифри й підпису: гасне вгору, потім з'являється знизу.
+   .fJump — миттєве перенесення в нижню точку без переходу, щоб поява йшла звідти,
+   а не поверталась тим самим шляхом, яким елемент щойно пішов. */
+.fnum,.fcap{transition:opacity .32s cubic-bezier(.22,.61,.36,1),transform .32s cubic-bezier(.22,.61,.36,1)}
+.fnum.fOut{opacity:0;transform:translate3d(0,-14px,0)}
+.fcap.fOut{opacity:0;transform:translate3d(0,-8px,0)}
+.fnum.fJump{transition:none;opacity:0;transform:translate3d(0,14px,0)}
+.fcap.fJump{transition:none;opacity:0;transform:translate3d(0,8px,0)}
+/* Права колонка підвантажується рядок за рядком, коли секція входить у кадр */
+.fright .refrow{opacity:0;transform:translate3d(0,14px,0);
+  transition:opacity .55s cubic-bezier(.22,.61,.36,1),transform .55s cubic-bezier(.22,.61,.36,1);
+  transition-delay:var(--rD,0ms)}
+.fright.rLoaded .refrow{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .fnum,.fcap{transition:none}
+  .fnum.fOut,.fcap.fOut,.fnum.fJump,.fcap.fJump{opacity:1;transform:none}
+  .fright .refrow{opacity:1;transform:none;transition:none}
+}
+.fbars{display:flex;gap:8px;align-items:center;padding-top:24px;width:548px;max-width:100%}
+.fbars span{flex:1 1 0;min-width:0;height:4px;border-radius:4px;background:var(--border)}
+.fbars span.on{background:var(--fg)}
+.fright{width:694px;flex:0 0 694px;border-top:1px solid var(--border)}
+body[data-vp="t"] .fright,body[data-vp="m"] .fright{width:100%;flex:1 1 auto}
+.refrow{position:relative;display:flex;align-items:center;justify-content:space-between;
+  height:56px;min-height:56px;padding:8px 0;border-bottom:1px solid var(--soft)}
+.refrow .ri{width:24px;flex:0 0 24px;font-family:var(--mono);font-size:10px;line-height:16px;color:var(--muted2)}
+.refrow .rn{width:419px;flex:0 0 419px;font-size:15px;font-weight:600;line-height:24px;letter-spacing:-.2344px;color:var(--fg)}
+body[data-vp="m"] .refrow .rn{width:auto;flex:1 1 auto;font-size:14px}
+.refrow .rd{font-family:var(--mono);font-size:11px;line-height:17.6px;color:var(--muted2);white-space:nowrap}
+.refrow .rlogo{position:absolute;left:361px;top:50%;transform:translateY(-50%) scale(.97);
+  width:200px;height:149px;border-radius:32px;overflow:hidden;z-index:6;pointer-events:none;
+  display:flex;align-items:center;justify-content:center;background:var(--card);
+  box-shadow:0 12px 40px rgba(0,0,0,.14);opacity:0;transition:opacity .25s ease,transform .25s ease}
+.refrow:hover .rlogo,.refrow:focus-visible .rlogo{opacity:1;transform:translateY(-50%) scale(1)}
+.refrow .rlogo .lg{font-size:12px;line-height:16.8px;color:var(--muted);text-align:center;padding:0 12px}
+body[data-vp="m"] .refrow .rlogo,body[data-vp="t"] .refrow .rlogo{display:none}
+.refrow:hover{background:rgba(0,0,0,.02)}
+@media (prefers-reduced-motion:reduce){.refrow .rlogo{transition:none}}
+
+/* Märkte · Figma 5:952 (pixel parity) */
+.msec{padding:80px 32px;display:flex;flex-direction:column;align-items:center}
+body[data-vp="m"] .msec{padding:56px 20px}
+.msec>.min{width:100%}
+.mrow{display:flex;align-items:flex-start;width:100%}
+body[data-vp="t"] .mrow,body[data-vp="m"] .mrow{flex-direction:column;gap:40px}
+.mleft{flex:1 1 0;min-width:0;align-self:stretch;display:flex;flex-direction:column;align-items:flex-start}
+body[data-vp="t"] .mleft,body[data-vp="m"] .mleft{width:100%;flex:0 0 auto}
+.mkick{font-family:var(--mono);font-size:11px;line-height:17.6px;letter-spacing:1.98px;
+  text-transform:uppercase;color:var(--muted);padding-top:5.5px}
+.mtitle{padding-top:8px;font-size:36px;font-weight:510;line-height:41.4px;letter-spacing:-.3509px;
+  color:var(--fg);width:457px;max-width:100%}
+body[data-vp="m"] .mtitle{font-size:26px;line-height:31px;width:100%}
+.mlead{padding-top:16px;font-size:14px;line-height:21.7px;letter-spacing:-.1504px;color:var(--muted);
+  width:318px;max-width:100%}
+.mright{width:694px;flex:0 0 694px;display:flex;flex-wrap:wrap;align-items:flex-start;
+  align-content:flex-start;gap:112px 64px}
+body[data-vp="t"] .mright,body[data-vp="m"] .mright{width:100%;flex:1 1 auto;gap:48px 32px}
+.mcard{display:flex;flex-direction:column;gap:16px;width:296px;max-width:363px}
+/* картки підвантажуються по черзі, коли секція входить у кадр */
+.mright .mcard{opacity:0;transform:translate3d(0,18px,0);
+  transition:opacity .6s cubic-bezier(.22,.61,.36,1),transform .6s cubic-bezier(.22,.61,.36,1);
+  transition-delay:var(--mD,0ms)}
+.mright.mLoaded .mcard{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .mright .mcard{opacity:1;transform:none;transition:none}
+}
+body[data-vp="m"] .mcard{width:100%;max-width:none}
+.micon{width:33px;height:27px;display:block;flex:0 0 auto}
+.mcard .mt2{font-size:19px;font-weight:650;line-height:24.7px;letter-spacing:-.6353px;color:var(--fg)}
+.mcard .md{font-size:14px;line-height:21.7px;letter-spacing:-.1504px;color:var(--muted);width:296px;max-width:100%}
+body[data-vp="m"] .mcard .md{width:100%}
+
+/* Warum NAXCON · Figma 5:1410 + горизонтальний пін-скрол */
+.wwrap{position:relative}
+.wstick{position:sticky;top:0}
+body[data-vp="t"] .wstick,body[data-vp="m"] .wstick{position:static}
+.wsec{padding:80px 32px;display:flex;flex-direction:column;align-items:center}
+body[data-vp="m"] .wsec{padding:56px 20px}
+.wsec>.win{width:100%}
+.whead{display:flex;flex-direction:column;gap:8px;align-items:flex-start;width:100%}
+.wkick{font-family:var(--mono);font-size:11px;line-height:17.6px;letter-spacing:1.98px;
+  text-transform:uppercase;color:var(--muted)}
+.wtitle{font-size:36px;font-weight:510;line-height:41.4px;letter-spacing:-.3509px;color:var(--fg)}
+body[data-vp="m"] .wtitle{font-size:26px;line-height:31px}
+.wview{padding-top:32px;width:100%;overflow:hidden}
+body[data-vp="t"] .wview,body[data-vp="m"] .wview{overflow-x:auto;overflow-y:hidden;
+  scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+.wtrack{display:flex;flex-wrap:nowrap;align-items:flex-start;gap:16px;will-change:transform}
+.wcard{background:#fff;border:1px solid var(--border);border-radius:24px;padding:32px;
+  display:flex;flex-direction:column;gap:64px;width:518px;flex:0 0 518px;min-width:276px;
+  height:var(--wcardh,620px);min-height:400px;max-height:667px}
+body[data-vp="m"] .wcard{width:300px;flex:0 0 300px;padding:24px;gap:16px;height:auto;max-height:none;min-height:0;scroll-snap-align:start}
+body[data-vp="t"] .wcard{scroll-snap-align:start}
+.wtoken{font-size:48px;font-weight:100;line-height:54px;letter-spacing:-2.8px;color:var(--fg);white-space:nowrap}
+.wtoken.lt{font-weight:275;color:var(--muted2)}
+body[data-vp="m"] .wtoken{font-size:34px;line-height:38px;letter-spacing:-1.6px}
+.willu{flex:1 1 auto;min-height:0;width:100%;overflow:hidden;position:relative}
+body[data-vp="m"] .willu{flex:0 0 auto;aspect-ratio:438/341}
+.willu img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block}
+.wfoot{display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;width:100%;flex:0 0 auto}
+.wfin{max-width:383px;padding-top:0;width:100%}
+body[data-vp="m"] .wfin{padding-top:0}
+.wct{font-size:32px;font-weight:510;line-height:30.4px;letter-spacing:-.6353px;color:var(--fg)}
+body[data-vp="m"] .wct{font-size:22px;line-height:26px}
+.wcd{padding-top:8px;font-size:14px;line-height:21.7px;letter-spacing:-.1504px;color:var(--muted);
+  width:383px;max-width:100%}
+body[data-vp="m"] .wcd{width:100%}
+@media (prefers-reduced-motion:reduce){
+  .wstick{position:static}
+  .wview{overflow-x:auto}
+  .wtrack{transform:none!important}
+}
+
+/* Newsroom · Figma 7:2042 (pixel parity) */
+.nsec{padding:80px 32px}
+body[data-vp="m"] .nsec{padding:56px 20px}
+.nhead{display:flex;flex-direction:column;gap:8px;align-items:flex-start;width:100%}
+.nkick{font-family:var(--mono);font-size:11px;line-height:17.6px;letter-spacing:1.98px;
+  text-transform:uppercase;color:var(--muted)}
+.ntitle{font-size:36px;font-weight:510;line-height:41.4px;letter-spacing:-.3509px;color:var(--fg)}
+body[data-vp="m"] .ntitle{font-size:26px;line-height:31px}
+.newslist{border-top:1px solid var(--border);margin-top:32px;width:100%}
+.nrow{position:relative;display:flex;align-items:center;gap:24px;height:76px;min-height:76px;
+  padding:16px 32px;border-bottom:1px solid var(--soft)}
+body[data-vp="m"] .nrow{padding:16px 0;height:auto;min-height:76px;flex-wrap:wrap;gap:8px 16px}
+.nrow:hover{background:rgba(0,0,0,.02)}
+.nrow .ni{width:24px;flex:0 0 24px;font-family:var(--mono);font-size:10px;line-height:16px;color:var(--muted2)}
+.nrow .nt{flex:1 1 0;min-width:0;font-size:17px;font-weight:550;line-height:27.2px;
+  letter-spacing:-.5166px;color:var(--fg)}
+body[data-vp="m"] .nrow .nt{flex:1 1 100%;font-size:15px;line-height:22px}
+.nrow .nd{flex:0 0 auto;font-family:var(--mono);font-size:11px;line-height:17.6px;color:var(--muted2);white-space:nowrap}
+.nrow .nr{flex:0 0 auto;display:flex;gap:6px;align-items:center;font-size:13px;font-weight:600;
+  line-height:20.8px;letter-spacing:-.0762px;color:var(--fg);white-space:nowrap}
+.nrow .nr .ar{font-family:var(--mono);font-weight:700;font-size:13px;line-height:20.8px}
+.nrow .nimg{position:absolute;right:18%;top:50%;transform:translateY(-50%) scale(.97);
+  width:200px;height:300px;border-radius:32px;overflow:hidden;z-index:6;pointer-events:none;
+  display:flex;align-items:center;justify-content:center;background:var(--card);
+  border:1px solid var(--border);box-shadow:0 16px 48px rgba(0,0,0,.16);
+  opacity:0;transition:opacity .25s ease,transform .25s ease}
+.nrow:hover .nimg,.nrow:focus-visible .nimg{opacity:1;transform:translateY(-50%) scale(1)}
+.nrow .nimg .lb{font-size:12px;line-height:16.8px;color:var(--muted);text-align:center;padding:0 12px}
+body[data-vp="m"] .nrow .nimg,body[data-vp="t"] .nrow .nimg{display:none}
+.nallrow{display:flex;gap:24px;height:76px;min-height:76px;padding:16px 0;
+  align-items:center;justify-content:center;border-bottom:0}
+.nallrow .lbl2{font-size:14px;font-weight:700;line-height:16px;letter-spacing:-.5166px;color:var(--fg)}
+.nallrow .ar{font-family:var(--mono);font-weight:700;font-size:13px;line-height:20.8px;color:var(--fg)}
+@media (prefers-reduced-motion:reduce){.nrow .nimg{transition:none}}
+
+/* Karriere + Kontakt · Figma 1:547 (pixel parity) */
+.ksec{padding:80px 32px;display:flex;flex-direction:column;align-items:center}
+body[data-vp="m"] .ksec{padding:56px 20px}
+.krow{display:flex;gap:16px;align-items:stretch;width:100%}
+body[data-vp="m"] .krow{flex-direction:column}
+.kcard{background:#fff;border:1px solid var(--border);border-radius:16px;padding:32px;
+  display:flex;flex-direction:column;gap:32px;align-items:flex-end;flex:1 1 0;min-width:0}
+body[data-vp="m"] .kcard{padding:24px;gap:24px}
+.killu{width:357px;height:278px;max-width:100%;overflow:hidden;position:relative;flex:0 0 auto}
+body[data-vp="m"] .killu{width:100%;height:200px}
+.killu img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block}
+.kbody{display:flex;flex-direction:column;align-items:flex-start;width:100%;flex:1 1 auto;min-height:0}
+.khead{display:flex;flex-direction:column;gap:8px;align-items:flex-start;width:100%}
+.kkick{font-family:var(--mono);font-size:11px;line-height:17.6px;letter-spacing:1.98px;
+  text-transform:uppercase;color:var(--muted)}
+.ktitle{font-size:36px;font-weight:510;line-height:41.4px;letter-spacing:-.3509px;color:var(--fg);
+  width:502px;max-width:100%}
+body[data-vp="m"] .ktitle{font-size:26px;line-height:31px;width:100%}
+.klead{padding-top:12px;padding-bottom:24px;font-size:14px;line-height:21.7px;letter-spacing:-.1504px;
+  color:var(--muted);width:502px;max-width:100%}
+.kcard.kb .klead{padding-top:16px}
+.kbtn{height:48px;width:100%;display:flex;align-items:flex-start}
+.kbtn .b{height:48px;min-height:48px;padding:0 24px;border-radius:8px;font-size:15px;font-weight:550;
+  line-height:24px;letter-spacing:-.2344px}

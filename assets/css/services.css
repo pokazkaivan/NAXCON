@@ -1,0 +1,89 @@
+/* Services · Figma 47:6847 (hero) + 47:6890 (Leistungsbereiche) — pixel parity */
+/* hero: контейнер px32 py48, спейсер 24, ряд вирівняний по нижньому краю */
+.svhero{padding:48px 32px;display:flex;flex-direction:column;align-items:center;width:100%}
+.svheroIn{display:flex;flex-direction:column;align-items:flex-start;width:100%}
+.svheroSp{height:24px;width:100%;flex:0 0 24px}
+.svheroRow{display:flex;align-items:flex-end;justify-content:space-between;width:100%;gap:32px}
+body[data-vp="t"] .svheroRow,body[data-vp="m"] .svheroRow{flex-direction:column;align-items:flex-start;gap:24px}
+.svheroL{flex:1 1 0;min-width:0;display:flex;flex-direction:column;gap:16px;align-items:flex-start}
+.svheroT{font-size:56px;font-weight:510;line-height:58.8px;letter-spacing:-1.0992px;color:var(--fg);width:451px;max-width:100%}
+.svheroP{font-size:14px;line-height:21.7px;letter-spacing:-.1504px;color:var(--muted);width:459px;max-width:100%}
+body[data-vp="t"] .svheroT,body[data-vp="m"] .svheroT{width:auto}
+body[data-vp="m"] .svheroT{font-size:38px;line-height:41px;letter-spacing:-.7px}
+body[data-vp="t"] .svheroP,body[data-vp="m"] .svheroP{width:auto}
+.svvid{height:798px;width:100%;border-radius:32px;overflow:hidden;position:relative;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;padding:112px 64px;
+  background-image:repeating-linear-gradient(45deg,rgba(0,0,0,.05) 0 1px,transparent 1px 8px)}
+.svvid span{font-family:var(--mono);font-size:10px;line-height:16px;letter-spacing:.6px;color:var(--muted2)}
+body[data-vp="t"] .svvid{height:520px;padding:64px 32px}
+body[data-vp="m"] .svvid{height:360px;padding:40px 20px}
+
+/* Leistungsbereiche: шапка, таби, шкала прогресу, дві картки, зображення */
+.svsec{padding:80px 32px;display:flex;flex-direction:column;align-items:center;gap:64px;width:100%}
+.svhead{display:flex;flex-direction:column;align-items:flex-start;gap:48px;width:100%}
+.svhk{display:flex;flex-direction:column;align-items:flex-start;gap:16px;width:100%}
+.svkick{font-family:var(--mono);font-size:11px;line-height:17.6px;letter-spacing:1.98px;
+  text-transform:uppercase;color:var(--muted)}
+.svtitle{font-size:36px;font-weight:510;line-height:41.4px;letter-spacing:-.3509px;color:var(--fg)}
+.svtabs{display:flex;align-items:flex-start;justify-content:space-between;width:100%;
+  border-bottom:1px solid var(--soft);overflow-x:auto}
+.svtabs button{appearance:none;background:none;border:0;border-bottom:2px solid transparent;
+  height:56px;padding:8px 0;display:flex;align-items:center;gap:0;cursor:pointer;flex:0 0 auto;
+  transition:border-color .2s ease,opacity .2s ease;opacity:.55}
+.svtabs button[aria-current="true"]{border-bottom-color:#000;opacity:1}
+.svtabs button:hover{opacity:1}
+.svtabs .n{font-family:var(--mono);font-size:10px;line-height:16px;color:var(--muted2);
+  width:24px;flex:0 0 24px;text-align:left}
+.svtabs .l{font-size:15px;font-weight:600;line-height:24px;letter-spacing:-.2344px;color:var(--fg);white-space:nowrap}
+.svbody{display:flex;align-items:flex-start;gap:8px;padding:32px 0;width:100%}
+body[data-vp="t"] .svbody,body[data-vp="m"] .svbody{flex-direction:column;gap:24px}
+.svleft{width:691px;flex:0 0 691px;min-width:0;display:flex;align-items:center;gap:32px}
+body[data-vp="t"] .svleft,body[data-vp="m"] .svleft{width:100%;flex:1 1 auto}
+.svrail{width:4px;flex:0 0 4px;display:flex;flex-direction:column;gap:8px;align-self:stretch}
+.svrail button{background:#f3f3f3;border:0;border-radius:32px;flex:1 1 0;width:100%;padding:0;
+  position:relative;overflow:hidden;cursor:pointer}
+.svrail button::after{content:"";position:absolute;inset:0 0 auto 0;height:0;background:var(--fg);
+  border-radius:32px;transition:height .3s cubic-bezier(.22,.61,.36,1)}
+.svrail button.done::after{height:100%}
+/* активний сегмент заповнюється за прогресом скролу всередині кроку — як у Solutions */
+.svrail button[aria-current="true"]::after{height:var(--svFill,0%);transition:height .12s linear}
+/* пін: секція стоїть на місці, поки скрол переводить таби */
+.svWrap{position:relative}
+.svStick{position:sticky;top:0}   /* top перераховує JS: центрує .svbody у вікні */
+body[data-vp="t"] .svStick,body[data-vp="m"] .svStick{position:static}
+.svcards{width:655px;flex:1 1 655px;min-width:0;display:flex;flex-direction:column;gap:8px;justify-content:center}
+.svcard{border-radius:32px;padding:32px;display:flex;flex-direction:column;gap:32px;width:100%}
+.svcHead{display:flex;flex-direction:column;align-items:flex-start;gap:8px;padding-top:8px;width:100%;word-break:break-word}
+.svcK{font-family:var(--mono);font-size:11px;line-height:17.6px;letter-spacing:1.98px;
+  text-transform:uppercase;color:var(--muted)}
+.svcT{font-size:36px;font-weight:510;line-height:41.4px;letter-spacing:-.3509px;color:var(--fg);width:450px;max-width:100%}
+.svcP{font-size:14px;line-height:21.7px;letter-spacing:-.1504px;color:var(--muted);width:418px;max-width:100%}
+.svgrid{display:flex;flex-wrap:wrap;gap:16px 32px;align-content:flex-start;width:100%}
+.svitem{width:259px;flex:0 0 259px;display:flex;flex-direction:column;gap:16px;align-items:flex-start}
+body[data-vp="m"] .svitem{width:100%;flex:1 1 100%}
+.svitem .ic{width:33px;height:27px;flex:0 0 auto;display:block}
+.svitem .ic img{width:100%;height:100%;display:block}
+.svitT{font-size:19px;font-weight:650;line-height:24.7px;letter-spacing:-.6353px;color:var(--fg);
+  font-stretch:condensed}
+.svitP{font-size:14px;line-height:21.7px;letter-spacing:-.1504px;color:var(--muted)}
+.svtags{display:flex;flex-wrap:wrap;gap:8px;align-items:center;align-content:center;width:100%}
+.svtag{background:#fff;border:1px solid var(--border);border-radius:8px;min-height:32px;
+  padding:6px 14px;display:flex;align-items:center;font-size:12.5px;line-height:20px;
+  letter-spacing:-.0366px;color:var(--fg2)}
+.svbtnrow{display:flex;align-items:center}
+.svbtnrow .b{background:var(--fg);border:1px solid var(--fg);color:#fff;min-height:48px;padding:0 24px;
+  border-radius:8px;display:inline-flex;align-items:center;justify-content:center;
+  font-size:15px;font-weight:550;line-height:24px;letter-spacing:-.2344px;font-stretch:condensed;text-decoration:none}
+.svshot{flex:1 1 0;min-width:0;height:764px;border-radius:32px;overflow:hidden;position:relative;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  background-image:repeating-linear-gradient(45deg,rgba(0,0,0,.05) 0 1px,transparent 1px 8px)}
+body[data-vp="t"] .svshot,body[data-vp="m"] .svshot{width:100%;flex:1 1 auto;height:420px}
+.svshot span{font-size:12px;line-height:16.8px;color:var(--muted);text-align:center;padding:0 12px}
+.svswap{animation:svIn .45s cubic-bezier(.22,.61,.36,1)}
+@keyframes svIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){
+  .svStick{position:static}
+  .svswap{animation:none}
+  .svrail button::after{transition:none}
+  .svrail button[aria-current="true"]::after{height:100%;transition:none}
+}

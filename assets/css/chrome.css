@@ -1,0 +1,31 @@
+/* ══════════ ПЛАВАЮЧА ПАНЕЛЬ КЕРУВАННЯ ══════════ */
+/* перемикач ширини сам по собі, по центру */
+.bar{position:fixed;top:0;left:0;right:0;z-index:80;display:flex;align-items:center;
+  justify-content:center;padding:8px 16px;pointer-events:none}
+.bar>*{pointer-events:auto}
+.seg{display:flex;background:var(--card);border:1px solid var(--border);border-radius:100px;overflow:hidden;box-shadow:var(--shadow)}
+.seg button{padding:0 16px;min-height:44px;font-size:12px;font-family:var(--mono);border-right:1px solid var(--soft)}
+.seg button:last-child{border-right:0}
+.seg button:hover{background:var(--fill)}
+.seg button[aria-pressed="true"]{background:var(--fg);color:#fff}
+
+/* ══════════ СЦЕНА + ПРИСТРОЇ ══════════ */
+main{height:100vh;padding:64px 24px 24px;display:flex;justify-content:center;align-items:stretch;overflow:auto}
+.device{display:flex;flex-direction:column;max-height:100%;transition:width .28s ease}
+/* desktop = браузерне вікно на всю ширину */
+body[data-vp="d"] .device{width:100%;background:var(--card);border:1px solid var(--border);border-radius:16px;box-shadow:var(--shadow)}
+.dbar{display:none;align-items:center;gap:8px;padding:12px 16px;border-bottom:1px solid var(--border);flex:0 0 auto}
+body[data-vp="d"] .dbar{display:flex}
+.dbar .dot{width:11px;height:11px;border-radius:50%;border:1px solid var(--strong);flex:0 0 11px}
+.dbar .url{margin:0 auto;width:min(420px,50%);height:30px;border:1px solid var(--border);border-radius:15px;font-family:var(--mono);font-size:11px;color:var(--muted);display:flex;align-items:center;justify-content:center;background:var(--canvas)}
+.dbar .side{width:45px}
+/* планшет і мобільний = бездротова рамка ґаджета */
+body[data-vp="t"] .device,body[data-vp="m"] .device{background:#101113;padding:16px;border-radius:48px;box-shadow:0 32px 80px rgba(0,0,0,.38),inset 0 0 0 2px rgba(255,255,255,.06)}
+body[data-vp="t"] .device{width:800px}
+body[data-vp="m"] .device{width:422px}
+.cam{display:none;flex:0 0 auto;height:20px;align-items:center;justify-content:center}
+body[data-vp="t"] .cam,body[data-vp="m"] .cam{display:flex}
+.cam i{width:8px;height:8px;border-radius:50%;background:#2a2c30;box-shadow:inset 0 0 2px #000}
+.screen{flex:1;min-height:0;overflow-y:auto;background:var(--canvas);scrollbar-width:thin}
+body[data-vp="d"] .screen{border-radius:0 0 15px 15px}
+body[data-vp="t"] .screen,body[data-vp="m"] .screen{border-radius:32px}

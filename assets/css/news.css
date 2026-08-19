@@ -1,0 +1,90 @@
+/* News index + Article · структура on.energy/news */
+.nh1{font-size:72px;font-weight:650;line-height:1.02;letter-spacing:-.03em}
+body[data-vp="t"] .nh1{font-size:56px}
+body[data-vp="m"] .nh1{font-size:40px}
+.seclbl{font-size:24px;font-weight:650;letter-spacing:-.01em;margin-bottom:var(--s4)}
+.feat{display:grid;grid-template-columns:1.55fr 1fr;gap:var(--s4)}
+body[data-vp="m"] .feat,body[data-vp="t"] .feat{grid-template-columns:1fr}
+.fcard{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--border);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden}
+.fcard .fmeta{display:flex;gap:12px;align-items:center;margin-bottom:10px}
+.fcard .fbody{padding:var(--s4)}
+.fcard .ft{font-size:26px;font-weight:650;line-height:1.2;letter-spacing:-.015em;margin-bottom:10px}
+.fcard.sm .ft{font-size:19px}
+.fcard .fx{font-size:14px;color:var(--muted);line-height:1.55}
+.allbar{display:flex;align-items:baseline;justify-content:space-between;border-bottom:1px solid var(--border);padding-bottom:var(--s3)}
+.allbar .cnt{font-family:var(--mono);font-size:11px;color:var(--muted2)}
+.artback{font-family:var(--mono);font-size:11px;color:var(--muted);display:inline-flex;align-items:center;gap:8px;min-height:44px}
+.artback:hover{color:var(--fg)}
+.arth1{font-size:56px;font-weight:650;line-height:1.06;letter-spacing:-.025em;max-width:22ch}
+body[data-vp="t"] .arth1{font-size:42px}
+body[data-vp="m"] .arth1{font-size:30px}
+.artdeck{font-size:21px;line-height:1.5;color:var(--fg2);max-width:62ch;margin-top:var(--s4)}
+body[data-vp="m"] .artdeck{font-size:17px}
+.artmeta{display:flex;gap:var(--s5);margin-top:var(--s5);flex-wrap:wrap}
+.artmeta div{display:flex;flex-direction:column;gap:2px}
+.artmeta .ml{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted2)}
+.artmeta .mv{font-size:14px;color:var(--fg)}
+.author{display:flex;gap:var(--s3);align-items:center;margin-top:var(--s5)}
+.author .ph{width:72px;height:72px;flex:0 0 72px}
+.author .ab{display:flex;flex-direction:column}
+.author .an{font-size:15px;font-weight:650}
+.author .ar{font-size:13px;color:var(--muted)}
+.artbody{max-width:68ch;display:flex;flex-direction:column;gap:var(--s4)}
+.artbody h2{font-size:28px;font-weight:650;line-height:1.25;letter-spacing:-.015em;margin-top:var(--s4)}
+body[data-vp="m"] .artbody h2{font-size:22px}
+.aboutbox{border-top:1px solid var(--border);padding-top:var(--s5);margin-top:var(--s5)}
+.aboutbox h3{font-size:15px;font-weight:700;margin-bottom:var(--s3)}
+
+/* Article · шапка/підвал за on.energy + повна типографіка тіла */
+.artgrid{display:grid;grid-template-columns:280px minmax(0,1fr);gap:var(--s7)}
+body[data-vp="t"] .artgrid{grid-template-columns:200px minmax(0,1fr);gap:var(--s5)}
+body[data-vp="m"] .artgrid{grid-template-columns:1fr;gap:var(--s4)}
+.artrule{border-top:1px solid var(--border)}
+.pubmark{display:flex;flex-direction:column;gap:10px}
+.pubmark .pl{width:56px;height:56px;border-radius:50%;border:1px solid var(--border);
+  background-image:repeating-linear-gradient(45deg,rgba(0,0,0,.05) 0 1px,transparent 1px 8px)}
+.pubmark .pn{font-size:15px;font-weight:600;line-height:1.3}
+.pubmark .pt{font-size:13px;color:var(--muted)}
+.artwhere{margin-top:var(--s5);display:flex;flex-direction:column;gap:4px}
+.artwhere span{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.arth1{font-size:56px;font-weight:400;line-height:1.1;letter-spacing:-.02em;max-width:20ch}
+body[data-vp="t"] .arth1{font-size:38px}
+body[data-vp="m"] .arth1{font-size:28px}
+.artdeck{font-size:19px;line-height:1.55;color:var(--muted);max-width:56ch;margin-top:var(--s4)}
+body[data-vp="m"] .artdeck{font-size:16px}
+.arthero{border-radius:24px 24px 0 0;overflow:hidden;margin-top:var(--s6)}
+.arthero .ph{border-radius:24px 24px 0 0;border-bottom:0}
+
+.artbody{max-width:68ch;display:flex;flex-direction:column;gap:var(--s4)}
+.artbody p{font-size:17px;line-height:1.7;color:var(--fg2)}
+.artbody p.lede{font-size:20px;line-height:1.6;color:var(--fg);font-weight:500}
+.artbody h2{font-size:28px;font-weight:650;line-height:1.25;letter-spacing:-.015em;margin-top:var(--s4);color:var(--fg)}
+.artbody h3{font-size:19px;font-weight:650;line-height:1.35;margin-top:var(--s3);color:var(--fg)}
+body[data-vp="m"] .artbody h2{font-size:22px}
+.artbody a{color:var(--fg);text-decoration:underline;text-underline-offset:3px}
+.artbody strong{color:var(--fg);font-weight:650}
+.artbody em{font-style:italic}
+.artbody ul,.artbody ol{padding-left:22px;display:flex;flex-direction:column;gap:8px}
+.artbody li{font-size:17px;line-height:1.6;color:var(--fg2)}
+.artbody li::marker{color:var(--muted2)}
+.artbody blockquote{border-left:2px solid var(--fg);padding:4px 0 4px 20px;margin:var(--s2) 0}
+.artbody blockquote p{font-size:21px;line-height:1.45;color:var(--fg);font-weight:500}
+.artbody blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:13px;color:var(--muted)}
+.artbody figure{margin:var(--s2) 0}
+.artbody figcaption{font-size:13px;color:var(--muted);margin-top:10px;line-height:1.5}
+.artbody table{width:100%;border-collapse:collapse;font-size:14px}
+.artbody th,.artbody td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--soft)}
+.artbody thead th{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--muted2);border-bottom:1px solid var(--border);font-weight:500}
+.artbody tbody td:first-child{font-weight:600;color:var(--fg)}
+.artbody td.num{font-family:var(--mono);color:var(--fg)}
+.artstats{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s4);border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);padding:var(--s4) 0}
+body[data-vp="m"] .artstats{grid-template-columns:1fr 1fr}
+.artstats .sv{font-family:var(--mono);font-size:32px;font-weight:700;line-height:1;letter-spacing:-.02em}
+.artstats .sl{font-size:12.5px;color:var(--muted);margin-top:8px;line-height:1.45}
+.artfoot h3{font-size:19px;font-weight:600;margin-bottom:var(--s3);color:var(--fg)}
+.artfoot p{font-size:16px;line-height:1.65;color:var(--muted);max-width:64ch}
+.artfoot .blk{margin-bottom:var(--s6)}
+.sharebar{display:flex;gap:var(--s2);flex-wrap:wrap;align-items:center}
+.sharebar .b{min-height:44px;padding:0 16px;font-size:13px;border-radius:8px}

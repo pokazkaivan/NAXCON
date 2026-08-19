@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Styleguide · NAXCON Wireframe</title>
+<link rel="stylesheet" href="../assets/css/tokens.css">
+<link rel="stylesheet" href="../assets/css/chrome.css">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/mega.css">
+<link rel="stylesheet" href="../assets/css/components.css">
+<link rel="stylesheet" href="../assets/css/hero.css">
+<link rel="stylesheet" href="../assets/css/home.css">
+<link rel="stylesheet" href="../assets/css/news.css">
+<link rel="stylesheet" href="../assets/css/news2.css">
+<link rel="stylesheet" href="../assets/css/services.css">
+<link rel="stylesheet" href="../assets/css/products.css">
+<link rel="stylesheet" href="../assets/css/company.css">
+<link rel="stylesheet" href="../assets/css/forms.css">
+<link rel="stylesheet" href="../assets/css/motion.css">
+<link rel="stylesheet" href="../assets/css/responsive.css">
+<style>
+  /* стилі самої сторінки сторібука — не частина дизайн-системи сайту */
+  body.sgPage{background:var(--canvas);color:var(--fg);font-family:var(--font);margin:0}
+  .sgWrap{max-width:1100px;margin:0 auto;padding:64px 32px 120px}
+  .sgTop{border-bottom:1px solid var(--border);padding-bottom:32px;margin-bottom:48px}
+  .sgTop h1{font-size:56px;font-weight:510;line-height:58.8px;letter-spacing:-1.0992px}
+  .sgTop p{margin-top:16px;font-size:16px;line-height:25.6px;color:var(--muted);max-width:60ch}
+  .sgNav{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+  .sgNav a{border:1px solid var(--border);border-radius:8px;padding:6px 12px;
+    font-family:var(--mono);font-size:11px;letter-spacing:1px;text-transform:uppercase;
+    color:var(--muted);text-decoration:none}
+  .sgNav a:hover{background:var(--fill);color:var(--fg)}
+  .sg{padding:40px 0;border-bottom:1px solid var(--soft)}
+  .sgHead{margin-bottom:24px}
+  .sgNote{margin-top:12px;font-size:14px;line-height:21.7px;color:var(--muted);max-width:70ch}
+  .sgBody{display:flex;flex-direction:column;gap:24px}
+  .sgGrid{display:flex;flex-wrap:wrap;gap:12px}
+  .sgSw{display:flex;align-items:center;gap:10px;border:1px solid var(--border);
+    border-radius:8px;padding:8px 12px;background:var(--card)}
+  .sgSwBox{width:28px;height:28px;border-radius:6px;border:1px solid var(--border);flex:0 0 28px}
+  .sgSw code{font-family:var(--mono);font-size:11px}
+  .sgSwV{font-family:var(--mono);font-size:11px;color:var(--muted2)}
+  .sgRow{display:flex;gap:24px;align-items:baseline;padding:10px 0;border-bottom:1px solid var(--soft)}
+  .sgL{width:190px;flex:0 0 190px;font-family:var(--mono);font-size:11px;letter-spacing:1px;
+    text-transform:uppercase;color:var(--muted2)}
+  .sgR{flex:1 1 0;min-width:0}
+  .sgBox{border:1px dashed var(--border);border-radius:12px;padding:24px;background:var(--card)}
+  code.sgCode{font-family:var(--mono);font-size:11.5px;background:var(--fill);
+    border-radius:4px;padding:2px 6px}
+  @media (max-width:700px){
+    .sgWrap{padding:40px 20px 80px}
+    .sgTop h1{font-size:34px;line-height:38px;letter-spacing:-.6px}
+    .sgRow{flex-direction:column;gap:6px}
+    .sgL{width:auto;flex:1 1 auto}
+  }
+</style>
+</head>
+<body class="sgPage" data-vp="d">
+<div class="sgWrap">
+
+<header class="sgTop">
+  <h1>Styleguide</h1>
+  <p>Компоненти, з яких зібраний прототип NAXCON. Сторінка підключає ті самі
+     файли стилів, що й сайт — якщо змінити токен або компонент, зразок тут
+     зміниться разом із бойовою версією. Це не окрема бібліотека, а дзеркало.</p>
+  <nav class="sgNav">
+    <a href="#s1">Токени</a><a href="#s2">Типографіка</a><a href="#s3">Кнопки</a><a href="#s4">Чипи</a><a href="#s5">Рядки</a><a href="#s6">Картки</a><a href="#s7">Форми</a><a href="#s8">Таби</a><a href="#s9">Заповнювачі</a><a href="#s10">Анімація</a>
+  </nav>
+</header>
+
+
+<section class="sg" id="s1">
+  <div class="sgHead"><span class="ckick">s1</span><h2 class="ctitle">Токени</h2>
+    <p class="sgNote">Усі кольори й шрифти живуть у <code class="sgCode">assets/css/tokens.css</code>. Монохром навмисний: рецензується структура й ієрархія, не візуал.</p></div>
+  <div class="sgBody"><div class="sgGrid">
+    <div class="sgSw"><span class="sgSwBox" style="background:#111214"></span>
+  <code>--fg</code><span class="sgSwV">#111214</span></div><div class="sgSw"><span class="sgSwBox" style="background:#3f4145"></span>
+  <code>--fg2</code><span class="sgSwV">#3f4145</span></div><div class="sgSw"><span class="sgSwBox" style="background:#63666b"></span>
+  <code>--muted</code><span class="sgSwV">#63666b</span></div>
+    <div class="sgSw"><span class="sgSwBox" style="background:#6b6e73"></span>
+  <code>--muted2</code><span class="sgSwV">#6b6e73</span></div><div class="sgSw"><span class="sgSwBox" style="background:#fafafa"></span>
+  <code>--canvas</code><span class="sgSwV">#fafafa</span></div><div class="sgSw"><span class="sgSwBox" style="background:#ffffff"></span>
+  <code>--card</code><span class="sgSwV">#ffffff</span></div>
+    <div class="sgSw"><span class="sgSwBox" style="background:rgba(0,0,0,.045)"></span>
+  <code>--fill</code><span class="sgSwV">rgba(0,0,0,.045)</span></div><div class="sgSw"><span class="sgSwBox" style="background:rgba(0,0,0,.13)"></span>
+  <code>--border</code><span class="sgSwV">rgba(0,0,0,.13)</span></div>
+    <div class="sgSw"><span class="sgSwBox" style="background:rgba(0,0,0,.07)"></span>
+  <code>--soft</code><span class="sgSwV">rgba(0,0,0,.07)</span></div>
+  </div>
+  <div class="sgBox">
+    <div class="sgRow"><span class="sgL">Основний шрифт</span><span class="sgR">SF Pro / system-ui — заголовки й текст</span></div>
+    <div class="sgRow"><span class="sgL">Моноширинний</span><span class="sgR">Menlo — кікери, номери, дати, технічні підписи</span></div>
+    <div class="sgRow"><span class="sgL">Крок сітки</span><span class="sgR">8 pt: 8 · 16 · 24 · 32 · 48 · 64 · 80 · 112</span></div>
+    <div class="sgRow"><span class="sgL">Радіуси</span><span class="sgR">4 бейдж · 8 кнопка й поле · 16 картка · 32 плашка й зображення</span></div>
+  </div></div>
+</section>
+
+
+<section class="sg" id="s2">
+  <div class="sgHead"><span class="ckick">s2</span><h2 class="ctitle">Типографіка</h2>
+    <p class="sgNote">Три рівні заголовків і два рівні тексту. На мобільному кожен рівень має власну сходинку — див. <code class="sgCode">responsive.css</code>.</p></div>
+  <div class="sgBody"><div class="sgBox">
+    <div class="svheroT" style="width:auto">Заголовок сторінки · 56/58.8</div>
+    <div class="ctitle" style="margin-top:24px">Заголовок секції · 36/41.4</div>
+    <div class="arH3" style="margin-top:24px">Підзаголовок · 32/40</div>
+    <div class="arH4" style="margin-top:24px">Заголовок блоку · 24/32</div>
+    <p class="arP" style="margin-top:24px">Основний текст статті · 18/28. Використовується
+      в довгих матеріалах і описах вакансій.</p>
+    <p class="svheroP" style="width:auto;margin-top:16px">Допоміжний текст · 14/21.7 —
+      ліди, анонси, підписи під заголовками.</p>
+    <span class="ckick" style="display:block;margin-top:24px">Кікер · Menlo 11/17.6, трекінг 1.98</span>
+  </div></div>
+</section>
+
+
+<section class="sg" id="s3">
+  <div class="sgHead"><span class="ckick">s3</span><h2 class="ctitle">Кнопки</h2>
+    <p class="sgNote">Одна основна кнопка на екран. Висота 48, радіус 8 — однаково на всіх сторінках.</p></div>
+  <div class="sgBody"><div class="sgBox"><div class="svbtnrow" style="gap:12px;flex-wrap:wrap">
+    <a class="b" href="#s3">Основна дія →</a>
+    <a class="kfileB" href="#s3">Другорядна</a>
+    <span class="pbadge">Бейдж</span>
+  </div></div></div>
+</section>
+
+
+<section class="sg" id="s4">
+  <div class="sgHead"><span class="ckick">s4</span><h2 class="ctitle">Чипи</h2>
+    <p class="sgNote">Перелічення без ієрархії: компетенції, сертифікати, теги.</p></div>
+  <div class="sgBody"><div class="sgBox"><div class="svtags">
+    <span class="svtag">Scrum</span><span class="svtag">Kanban</span><span class="svtag">SAFe</span><span class="svtag">Design-Systeme</span><span class="svtag">ISO 9241</span><span class="svtag">Motion Design</span>
+  </div></div></div>
+</section>
+
+
+<section class="sg" id="s5">
+  <div class="sgHead"><span class="ckick">s5</span><h2 class="ctitle">Рядки</h2>
+    <p class="sgNote">Основний спосіб подати список: новини, сертифікати, вакансії, точки контакту. Висота 76, номер у моноширинному, дія праворуч.</p></div>
+  <div class="sgBody"><div class="sgBox" style="padding:0;border-style:solid">
+    <div class="newslist" style="margin-top:0;border-top:0">
+      <a class="gjob" href="#s5"><span class="n">01</span>
+        <span class="t">Рядок зі статусом і дією</span>
+        <span class="m">Vollzeit</span><span class="m">Weil am Rhein</span>
+        <span class="go">Details <span class="ar">⟶</span></span></a>
+      <a class="nrow" href="#s5"><span class="ni">02</span>
+        <span class="nt">Рядок новини з датою</span>
+        <span class="nimg"><span class="lb">Image</span></span>
+        <span class="nd">06.08.2026</span>
+        <span class="nr">Read more <span class="ar">⟶</span></span></a>
+    </div>
+  </div></div>
+</section>
+
+
+<section class="sg" id="s6">
+  <div class="sgHead"><span class="ckick">s6</span><h2 class="ctitle">Картки</h2>
+    <p class="sgNote">Три типи: сіра плашка для акценту, картка з ілюстрацією, елемент сітки.</p></div>
+  <div class="sgBody"><div class="sgBox" style="border-style:solid">
+    <div class="gpanel" style="padding:32px">
+      <span class="ckick">Плашка</span>
+      <div class="ctitle" style="font-size:24px;line-height:32px">Сірий фон #f3f3f3, радіус 32</div>
+      <p class="svheroP" style="width:auto">Використовується для форм, цитат і акцентних блоків.</p>
+    </div>
+    <div class="svgrid" style="margin-top:24px">
+      <div class="svitem"><div class="svitT">Елемент сітки</div><p class="svitP">Опис у два рядки, 14/21.7 приглушеним.</p></div><div class="svitem"><div class="svitT">Другий елемент</div><p class="svitP">Ті самі відступи, ширина 259.</p></div>
+    </div>
+  </div></div>
+</section>
+
+
+<section class="sg" id="s7">
+  <div class="sgHead"><span class="ckick">s7</span><h2 class="ctitle">Форми</h2>
+    <p class="sgNote">Поле 54 px, підпис моноширинним кікером, обовʼязковість позначена словом, а не зірочкою.</p></div>
+  <div class="sgBody"><div class="sgBox"><div class="gform" style="max-width:520px">
+    <div class="kfield"><label class="klab">Name <span class="req">(erforderlich)</span></label>
+      <div class="kinp">Name</div></div>
+    <div class="kfield"><label class="klab">Bereich</label>
+      <div class="kinp">[Alle Leistungsbereiche &#9662;]</div></div>
+    <div class="kfield"><span class="klab">Lebenslauf</span>
+      <div class="kfile"><div class="kfileL">
+        <span class="kfileT">Datei hierher ziehen oder auswählen</span>
+        <span class="kfileH">PDF oder DOCX · max. 10 MB</span></div>
+        <span class="kfileB">Datei wählen</span></div></div>
+    <div class="kcheck"><span class="box"></span><span>Згода на обробку · <u>Datenschutzerklärung</u></span></div>
+    <div class="svbtnrow"><a class="b" href="#s7">Absenden →</a></div>
+  </div></div></div>
+</section>
+
+
+<section class="sg" id="s8">
+  <div class="sgHead"><span class="ckick">s8</span><h2 class="ctitle">Таби</h2>
+    <p class="sgNote">Одна геометрія для трьох випадків: напрями Services, рубрики новин, юридичні документи. Активний підкреслений 2 px, смуга гортається вбік на вузькому екрані.</p></div>
+  <div class="sgBody"><div class="sgBox">
+    <div class="ltabs" role="tablist" aria-label="Приклад">
+      <button type="button" role="tab" aria-selected="true" aria-current="true">Impressum</button>
+      <button type="button" role="tab" aria-selected="false" tabindex="-1">Datenschutz</button>
+      <button type="button" role="tab" aria-selected="false" tabindex="-1">Nutzungsbedingungen</button>
+    </div>
+    <div class="nfilt" style="margin-top:24px">
+      <button type="button" aria-current="true"><span class="l">Alle</span><span class="num">69</span></button>
+      <button type="button"><span class="l">News</span><span class="num">12</span></button>
+      <button type="button"><span class="l">Pressemitteilung</span><span class="num">4</span></button>
+    </div>
+  </div></div>
+</section>
+
+
+<section class="sg" id="s9">
+  <div class="sgHead"><span class="ckick">s9</span><h2 class="ctitle">Заповнювачі</h2>
+    <p class="sgNote">Заштрихований блок — слот під зображення або відео з наміченим розміром. У прототипі навмисно не використовуються справжні картинки.</p></div>
+  <div class="sgBody"><div class="sgBox" style="display:flex;gap:16px;flex-wrap:wrap">
+    <span class="cshot" style="width:280px;height:180px"><span>Image</span></span>
+    <span class="svvid" style="width:280px;height:180px;padding:0"><span>▶ VIDEO · LOOP</span></span>
+    <span class="clocMap" style="position:static;width:180px;height:180px"><span>Map</span></span>
+  </div></div>
+</section>
+
+
+<section class="sg" id="s10">
+  <div class="sgHead"><span class="ckick">s10</span><h2 class="ctitle">Анімація</h2>
+    <p class="sgNote">Поява по скролу з каскадом 55 мс і стелею 330. Пʼять характерів руху, щоб сторінка не виглядала однорідно.</p></div>
+  <div class="sgBody"><div class="sgBox">
+    <div class="sgRow"><span class="sgL">up</span><span class="sgR">виїзд знизу 28 px — картки й великі блоки</span></div>
+    <div class="sgRow"><span class="sgL">sm</span><span class="sgR">виїзд знизу 16 px — дрібні елементи в каскаді</span></div>
+    <div class="sgRow"><span class="sgL">side</span><span class="sgR">зсув збоку 20 px — цитати</span></div>
+    <div class="sgRow"><span class="sgL">img</span><span class="sgR">зум 1.035 → 1 — зображення й відеослоти</span></div>
+    <div class="sgRow"><span class="sgL">line</span><span class="sgR">витирання згори вниз — заголовки</span></div>
+    <div class="sgRow"><span class="sgL">Інерційний скрол</span><span class="sgR">колесо зсуває ціль, позиція наздоганяє по 14% за кадр</span></div>
+    <div class="sgRow"><span class="sgL">Вимикається</span><span class="sgR">на планшеті, мобільному та за prefers-reduced-motion</span></div>
+  </div></div>
+</section>
+
+</div>
+</body>
+</html>

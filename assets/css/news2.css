@@ -1,0 +1,139 @@
+/* News · Figma 59:12905 + Article · Figma 66:13951 — pixel parity */
+/* дві великі картки «Im Fokus» */
+.nfeat{display:flex;gap:32px;align-items:flex-start;padding:0 32px 64px;width:100%}
+body[data-vp="t"] .nfeat,body[data-vp="m"] .nfeat{flex-direction:column;gap:48px;padding:0 20px 40px}
+.nfCard{flex:1 1 0;min-width:0;display:flex;flex-direction:column;gap:32px;align-items:flex-end;
+  text-decoration:none;color:inherit}
+.nfImg{width:100%;aspect-ratio:438 / 341;border-radius:32px;overflow:hidden;position:relative;
+  display:flex;align-items:center;justify-content:center;
+  background-image:repeating-linear-gradient(45deg,rgba(0,0,0,.05) 0 1px,transparent 1px 8px)}
+.nfImg span{font-size:12px;line-height:16.8px;color:var(--muted)}
+.nfBody{width:100%;padding-right:16px;display:flex;flex-direction:column;align-items:flex-start}
+.nfRow{display:flex;gap:32px;align-items:flex-start;width:100%;position:relative}
+body[data-vp="m"] .nfRow{flex-direction:column;gap:16px}
+.nfMeta{display:flex;flex-direction:column;gap:4px;align-items:flex-start;flex:0 0 auto;
+  font-family:var(--mono);font-size:11px;line-height:17.6px;letter-spacing:1.98px;
+  text-transform:uppercase;color:var(--muted);white-space:nowrap}
+.nfTxt{flex:1 1 0;min-width:0;display:flex;flex-direction:column;gap:16px;align-items:flex-start;word-break:break-word}
+.nfT{font-size:24px;font-weight:510;line-height:32px;letter-spacing:-.3509px;color:var(--fg);width:100%}
+.nfP{font-size:14px;line-height:21.7px;letter-spacing:-.1504px;color:var(--muted);width:442px;max-width:100%}
+.nfArrow{position:absolute;left:0;bottom:0;width:64px;height:32px;background:#f3f3f3;border-radius:8px;
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--mono);font-weight:700;font-size:13px;line-height:20.8px;color:var(--fg)}
+body[data-vp="m"] .nfArrow{position:static}
+/* шапка «Alle» + фільтри з лічильниками */
+.nall{padding:64px 32px;display:flex;flex-direction:column;width:100%}
+.nallHead{display:flex;align-items:flex-end;justify-content:space-between;width:100%}
+.nallT{font-size:36px;font-weight:510;line-height:41.4px;letter-spacing:-.3509px;color:var(--fg)}
+.nallC{font-family:var(--mono);font-size:11px;line-height:17.6px;letter-spacing:1.98px;
+  text-transform:uppercase;color:var(--muted)}
+.nfilt{margin-top:32px;display:flex;gap:32px;align-items:flex-start;width:100%;
+  border-bottom:1px solid var(--soft);overflow-x:auto}
+.nfilt button{appearance:none;background:none;border:0;border-bottom:2px solid transparent;
+  height:56px;padding:8px 16px 8px 0;display:flex;align-items:center;gap:16px;cursor:pointer;
+  flex:0 0 auto;opacity:.55;transition:border-color .2s ease,opacity .2s ease}
+.nfilt button[aria-current="true"]{border-bottom-color:#000;opacity:1}
+.nfilt button:hover{opacity:1}
+.nfilt .l{font-size:15px;font-weight:600;line-height:24px;letter-spacing:-.2344px;color:var(--fg);white-space:nowrap}
+/* .num, а не .c: глобальний .c — це картка з бордером і тінню */
+.nfilt .num{font-family:var(--mono);font-size:10px;line-height:16px;color:var(--muted2)}
+.nallList{margin-top:32px;width:100%}
+.nnext{display:flex;align-items:center;justify-content:center;gap:8px;height:76px;min-height:76px;
+  text-decoration:none;color:var(--fg);font-size:13px;font-weight:700;line-height:16px}
+.nnext .ar{font-family:var(--mono);font-weight:700;font-size:13px;line-height:20.8px}
+
+/* Article */
+.arTop{padding:32px;display:flex;flex-direction:column;gap:48px;align-items:flex-start;width:100%}
+.arBack{background:#f3f3f3;border-radius:8px;padding:8px 12px;display:inline-flex;align-items:center;
+  gap:8px;font-family:var(--mono);font-size:12px;line-height:20.8px;color:var(--fg);text-decoration:none;align-self:flex-start}
+.arBack .ar{font-weight:700;font-size:13px;transform:scaleX(-1)}
+.arHead{display:flex;gap:142px;align-items:flex-start;width:100%}
+body[data-vp="t"] .arHead,body[data-vp="m"] .arHead{flex-direction:column;gap:24px}
+.arMeta{flex:0 0 auto;display:flex;flex-direction:column;gap:8px;align-items:flex-start;
+  font-family:var(--mono);font-size:11px;line-height:17.6px;letter-spacing:1.98px;
+  text-transform:uppercase;color:var(--muted);white-space:nowrap}
+.arHeadTxt{width:800px;max-width:100%;display:flex;flex-direction:column;gap:16px;align-items:flex-start;word-break:break-word}
+.arH1{font-size:56px;font-weight:510;line-height:58.8px;letter-spacing:-1.0992px;color:var(--fg);width:100%}
+body[data-vp="m"] .arH1{font-size:34px;line-height:38px;letter-spacing:-.6px}
+.arLead{font-size:14px;line-height:21.7px;letter-spacing:-.1504px;color:var(--muted);width:576px;max-width:100%}
+.arHero{margin:0 32px;height:762px;border-radius:32px;overflow:hidden;position:relative;
+  display:flex;align-items:center;justify-content:center;
+  background-image:repeating-linear-gradient(45deg,rgba(0,0,0,.05) 0 1px,transparent 1px 8px)}
+body[data-vp="t"] .arHero{height:420px;margin:0 20px}
+body[data-vp="m"] .arHero{height:260px;margin:0 20px}
+.arHero span{font-size:12px;line-height:16.8px;color:var(--muted)}
+/* колонка тексту — 800 зі зсувом 278 від лівого краю, як у макеті */
+/* у макеті це плашка #f3f3f3 з радіусом 32 і паддінгом 64/278, а не зсув колонки */
+.arBody{margin:0 32px;background:#f3f3f3;border-radius:32px;padding:64px 278px;display:flex}
+.arCol{width:100%;max-width:800px;display:flex;flex-direction:column;gap:64px}
+body[data-vp="t"] .arBody{margin:0 20px;padding:48px 40px}
+body[data-vp="m"] .arBody{margin:0 20px;padding:32px 20px;border-radius:24px}
+body[data-vp="m"] .arCol{gap:40px}
+.arIntro{font-size:24px;line-height:32px;letter-spacing:-.3509px;color:var(--fg)}
+body[data-vp="m"] .arIntro{font-size:19px;line-height:27px}
+.arBlk{display:flex;flex-direction:column;gap:24px;align-items:flex-start;width:100%}
+.arH2{font-size:48px;font-weight:510;line-height:54px;letter-spacing:-.3509px;color:var(--fg);width:100%}
+body[data-vp="m"] .arH2{font-size:30px;line-height:36px}
+.arH3{font-size:32px;font-weight:510;line-height:40px;letter-spacing:-.3509px;color:var(--fg);width:100%}
+.arH4{font-size:24px;font-weight:510;line-height:32px;letter-spacing:-.3509px;color:var(--fg);width:100%}
+.arP{font-size:18px;line-height:28px;letter-spacing:-.3509px;color:var(--fg);width:100%}
+.arP b{font-weight:590}
+.arList{display:flex;flex-direction:column;gap:16px;width:100%}
+.arLi{display:flex;gap:16px;align-items:center;width:100%}
+.arLi .n{width:24px;flex:0 0 24px;font-family:var(--mono);font-size:10px;line-height:16px;color:var(--muted2)}
+.arLi .t{flex:1 1 0;min-width:0;font-size:17px;line-height:27.2px;letter-spacing:-.5166px;color:var(--fg)}
+.arLi .t b{font-weight:550;font-stretch:condensed}
+.arFig{display:flex;flex-direction:column;gap:16px;align-items:center;width:100%}
+.arFigImg{width:100%;height:500px;border-radius:32px;overflow:hidden;position:relative;
+  display:flex;align-items:center;justify-content:center;
+  background-image:repeating-linear-gradient(45deg,rgba(0,0,0,.05) 0 1px,transparent 1px 8px)}
+body[data-vp="m"] .arFigImg{height:240px}
+.arFigImg span{font-size:12px;line-height:16.8px;color:var(--muted)}
+.arCap{font-size:14px;line-height:18px;letter-spacing:-.3509px;color:rgba(17,18,20,.5);
+  text-align:center;width:514px;max-width:100%}
+.arQuote{border-left:2px solid #000;padding:32px;display:flex;flex-direction:column;gap:16px;
+  align-items:flex-start;width:100%;letter-spacing:-.3509px;word-break:break-word}
+.arQuoteT{font-size:28px;font-weight:510;line-height:40px;color:var(--fg);width:683px;max-width:100%}
+body[data-vp="m"] .arQuoteT{font-size:21px;line-height:30px}
+.arQuoteT .q{color:var(--muted2)}
+.arQuoteA{font-size:14px;line-height:18px;color:rgba(17,18,20,.5);width:514px;max-width:100%}
+.arTable{width:100%;border-collapse:collapse;table-layout:fixed}
+.arTable th{border-bottom:1px solid var(--border);height:40.5px;padding:12px 14px;text-align:left;
+  font-family:var(--mono);font-weight:400;font-size:10px;line-height:16px;letter-spacing:1px;
+  text-transform:uppercase;color:var(--muted2)}
+.arTable td{border-bottom:1px solid var(--soft);height:47.4px;padding:12px 14px;
+  font-size:14px;line-height:22.4px;color:var(--fg)}
+.arTable td.k{font-weight:600;letter-spacing:-.1504px}
+.arTable td.m{font-family:var(--mono)}
+.arTable td.d{letter-spacing:-.1504px}
+.arTable col.c1{width:157.55px}.arTable col.c2{width:120.45px}.arTable col.c3{width:126.05px}
+.arStats{display:flex;align-items:flex-start;justify-content:space-between;width:100%;gap:16px}
+body[data-vp="m"] .arStats{flex-direction:column;gap:32px}
+.arStat{flex:1 1 0;min-width:0;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end}
+.arStatN{font-size:40px;line-height:54px;color:var(--fg);white-space:nowrap}
+.arStatL{padding-top:24px;font-size:16px;line-height:25.6px;letter-spacing:-.3125px;color:var(--fg2)}
+.arAbout{margin:32px 32px 0;background:#f3f3f3;border-radius:32px;padding:64px 278px;display:flex}
+body[data-vp="t"] .arAbout{margin:24px 20px 0;padding:48px 40px}
+body[data-vp="m"] .arAbout{margin:24px 20px 0;padding:32px 20px;border-radius:24px}
+.arKv{display:flex;gap:16px;align-items:center;width:100%}
+.arKv .k{width:48px;flex:0 0 48px;font-family:var(--mono);font-size:10px;line-height:16px;color:var(--muted2)}
+/* окремою властивістю, а не скороченням: інакше не читається в перевірці */
+.arKv .v{flex:1 1 0;min-width:0;font-size:17px;line-height:27.2px;letter-spacing:-.5166px;
+  color:var(--fg);text-decoration-line:underline}
+.arShare{display:flex;flex-wrap:wrap;gap:4px;align-items:center;width:431px;max-width:100%}
+.arChip{border:1px solid var(--border);border-radius:4px;padding:3px 8px;background:none;cursor:pointer;
+  font-family:var(--mono);font-size:10px;line-height:16px;letter-spacing:1px;
+  text-transform:uppercase;color:var(--muted);text-decoration:none}
+.arChip:hover{background:var(--fill)}
+/* Ähnliche Artikel — три картки того самого компонента, що «Im Fokus» */
+.arRel{padding:64px 32px;display:flex;flex-direction:column;width:100%}
+.arRelHead{display:flex;flex-direction:column;gap:8px;align-items:flex-start;width:100%}
+.arRelK{font-family:var(--mono);font-size:11px;line-height:17.6px;letter-spacing:1.98px;
+  text-transform:uppercase;color:var(--muted)}
+.arRelT{font-size:36px;font-weight:510;line-height:41.4px;letter-spacing:-.3509px;color:var(--fg)}
+.arRelGrid{margin-top:48px;display:flex;gap:32px;align-items:flex-start;width:100%}
+body[data-vp="t"] .arRelGrid,body[data-vp="m"] .arRelGrid{flex-direction:column;gap:40px}
+.nfRel .nfBody{gap:16px;padding-right:16px;display:flex;flex-direction:column;align-items:flex-start}
+.nfRel .nfMeta{flex-direction:row;gap:24px}
+.nfRel .nfTxt{gap:16px;width:100%}
+.nfRel .nfP{width:100%}

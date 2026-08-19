@@ -1,0 +1,165 @@
+/* Produkte · Figma 25:2709 / 39:4373 (pixel parity) */
+/* z-index 1: штора (.pnextStick) лежить вище і зʼїжджає, відкриваючи цей блок */
+.pblk{display:flex;flex-direction:column;width:100%;position:relative;z-index:1}
+/* 1 · hero */
+.phero{padding:32px;display:flex;flex-direction:column;align-items:center;width:100%}
+.pheroIn{display:flex;align-items:flex-start;width:100%;gap:32px}
+body[data-vp="t"] .pheroIn,body[data-vp="m"] .pheroIn{flex-direction:column;gap:32px}
+.pheroL{width:662px;flex:0 1 662px;min-width:0;display:flex;flex-direction:column;justify-content:space-between;gap:48px}
+body[data-vp="t"] .pheroL,body[data-vp="m"] .pheroL{width:100%;flex:1 1 auto}
+.pbadges{display:flex;gap:4px;align-items:flex-start}
+.pbadge{border:1px solid var(--border);border-radius:4px;padding:3px 8px;font-family:var(--mono);
+  font-size:10px;line-height:16px;letter-spacing:1px;text-transform:uppercase;color:var(--muted)}
+.pbadge.on{background:var(--fg);border-color:var(--fg);color:#fff}
+.ptitle{font-size:56px;font-weight:510;line-height:58.8px;letter-spacing:-1.0992px;color:var(--fg);
+  width:504px;max-width:100%;margin-top:16px}
+body[data-vp="t"] .ptitle{font-size:42px;line-height:46px}
+body[data-vp="m"] .ptitle{font-size:32px;line-height:35px;width:100%}
+.plead{padding-top:12px;font-size:14px;line-height:21.7px;letter-spacing:-.1504px;color:var(--muted);
+  width:459px;max-width:100%}
+.pcta{display:flex;gap:16px;align-items:center;flex-wrap:wrap;margin-top:24px}
+.pcta .b{min-height:48px;padding:0 24px;border-radius:8px;font-size:15px;font-weight:550;
+  line-height:24px;letter-spacing:-.2344px}
+.pshot{flex:0 1 694px;width:694px;min-width:0;border-radius:32px;overflow:hidden;position:relative;
+  display:flex;align-items:center;justify-content:center;
+  background-image:repeating-linear-gradient(45deg,rgba(0,0,0,.05) 0 1px,transparent 1px 8px)}
+body[data-vp="t"] .pshot,body[data-vp="m"] .pshot{width:100%;flex:1 1 auto}
+.pshot.h622{height:622px}
+.pshot.h735{height:735px}
+body[data-vp="m"] .pshot.h622,body[data-vp="m"] .pshot.h735{height:320px}
+.pshot span{font-size:12px;line-height:16.8px;color:var(--muted);text-align:center;padding:0 12px}
+/* 2 · вступний текст */
+.pintroWrap{position:relative}
+.pintroStick{position:sticky;top:0}
+body[data-vp="t"] .pintroStick,body[data-vp="m"] .pintroStick{position:static}
+@media (prefers-reduced-motion:reduce){.pintroStick{position:static}}
+.pintro{padding:32px;border-bottom:1px solid var(--soft);width:100%}
+.pintroIn{background:#f3f3f3;border-radius:32px;padding:112px 64px;display:flex;flex-direction:column;gap:32px}
+body[data-vp="m"] .pintroIn{padding:48px 24px;border-radius:24px}
+.pintroK{font-size:14px;line-height:21.7px;letter-spacing:-.1504px;color:var(--muted)}
+.pintroT{padding-top:8px;font-size:36px;line-height:48px;letter-spacing:-.3509px;color:var(--fg)}
+body[data-vp="m"] .pintroT{font-size:24px;line-height:34px}
+/* Пословна заливка по скролу: до заповнення #CFD0D2, після — #111214.
+   Перехід довший за крок заливки, тому сусідні слова встигають накластись —
+   заливка читається як хвиля, а не як клацання по одному слову. */
+.pintroT .w{color:#cfd0d2;transition:color .5s cubic-bezier(.22,.61,.36,1)}
+.pintroT .w.on{color:var(--fg)}
+@media (prefers-reduced-motion:reduce){.pintroT .w{color:var(--fg);transition:none}}
+/* 3 · solutions */
+.psol{padding:80px 32px;display:flex;flex-direction:column;align-items:center;width:100%}
+.psolIn{display:flex;align-items:flex-start;justify-content:space-between;width:100%;gap:32px}
+body[data-vp="t"] .psolIn,body[data-vp="m"] .psolIn{flex-direction:column}
+.psolL{display:flex;gap:32px;align-items:stretch}
+.pprog{width:4px;flex:0 0 4px;display:flex;flex-direction:column;gap:8px;align-self:stretch}
+body[data-vp="m"] .pprog{display:none}
+.pprog i{background:#f3f3f3;border-radius:32px;flex:1 1 0;width:100%;display:block;position:relative}
+.pprog i.on::after{content:"";position:absolute;inset:0 0 auto 0;height:63%;background:var(--fg);border-radius:32px}
+.psolCards{display:flex;flex-direction:column;gap:8px;justify-content:center}
+.pcard{background:#f3f3f3;border-radius:32px;padding:32px;width:434px;max-width:100%;
+  display:flex;flex-direction:column}
+body[data-vp="m"] .pcard{width:100%;padding:24px;border-radius:24px}
+.pcardK{font-family:var(--mono);font-size:11px;line-height:17.6px;letter-spacing:1.98px;
+  text-transform:uppercase;color:var(--muted)}
+.pcardT{padding-top:8px;font-size:36px;font-weight:510;line-height:41.4px;letter-spacing:-.3509px;
+  color:var(--fg);width:366px;max-width:100%}
+body[data-vp="m"] .pcardT{font-size:24px;line-height:29px;width:100%}
+.pcardP{padding-top:16px;font-size:14px;line-height:21.7px;letter-spacing:-.1504px;color:var(--muted)}
+.ptech{border-top:1px solid var(--border);margin-top:32px}
+.ptechRow{display:flex;align-items:center;justify-content:space-between;height:56px;min-height:56px;
+  padding:8px 0;border-bottom:1px solid var(--soft);gap:16px}
+.ptechRow span{font-family:var(--mono);font-size:11px;line-height:17.6px;color:var(--muted2)}
+.ptechRow i{font-style:normal;font-size:18px;line-height:24px;color:var(--fg);flex:0 0 auto}
+/* 4 · технічні дані */
+.pspecs{padding:80px 32px;display:flex;flex-direction:column;align-items:flex-end;width:100%}
+.pspecsK{width:694px;max-width:100%;font-family:var(--mono);font-size:11px;line-height:17.6px;
+  letter-spacing:1.98px;text-transform:uppercase;color:var(--muted)}
+.pspecsT{margin-top:32px;width:694px;max-width:100%;border-top:1px solid var(--border)}
+.pspecRow{display:flex;align-items:center;justify-content:space-between;height:56px;min-height:56px;
+  padding:8px 0;border-bottom:1px solid var(--soft);gap:16px}
+.pspecRow .n{width:24px;flex:0 0 24px;font-family:var(--mono);font-size:10px;line-height:16px;color:var(--muted2)}
+.pspecRow .l{flex:1 1 0;min-width:0;font-family:var(--mono);font-size:11px;line-height:17.6px;color:var(--muted2)}
+.pspecRow .v{flex:0 0 auto;font-size:15px;font-weight:600;line-height:24px;letter-spacing:-.2344px;color:var(--fg)}
+/* 5 · фіче-картки */
+.pfeat{padding:0 32px;width:100%}
+.pfeatGrid{display:flex;flex-wrap:wrap;column-gap:16px;row-gap:24px;align-items:flex-start}
+.pfeatCard{background:#fff;border:1px solid var(--border);border-radius:24px;padding:32px;
+  width:670px;flex:1 1 480px;height:407px;display:flex;flex-direction:column;justify-content:space-between}
+body[data-vp="m"] .pfeatCard{width:100%;flex:1 1 100%;height:auto;padding:24px;gap:32px}
+.pfeatBig{font-size:112px;font-weight:100;line-height:1;letter-spacing:-2.8px;color:var(--fg);
+  text-align:right;width:100%}
+body[data-vp="m"] .pfeatBig{font-size:64px;letter-spacing:-1.6px}
+.pfeatFoot{padding-top:48px;display:flex;flex-direction:column;gap:8px;width:100%}
+body[data-vp="m"] .pfeatFoot{padding-top:0}
+.pfeatT{font-size:32px;line-height:30.4px;letter-spacing:-.6353px;color:var(--fg)}
+body[data-vp="m"] .pfeatT{font-size:22px;line-height:26px}
+.pfeatP{padding-top:8px;font-size:14px;line-height:21.7px;letter-spacing:-.1504px;color:var(--muted);
+  width:488px;max-width:100%}
+/* 6 · trusted by */
+.ptrust{padding:80px 32px;display:flex;flex-direction:column;align-items:flex-end;gap:16px;width:100%}
+.ptrustIn{width:694px;max-width:100%}
+.ptrustT{font-size:32px;line-height:30.4px;letter-spacing:-.6353px;color:var(--fg)}
+.ptrustP{padding-top:32px;font-size:18px;line-height:24px;letter-spacing:-.3509px;color:var(--fg);
+  width:492px;max-width:100%}
+.ptrustLogos{padding-top:112px;display:flex;gap:64px;align-items:flex-start;flex-wrap:wrap}
+body[data-vp="m"] .ptrustLogos{padding-top:48px;gap:32px}
+.ptrustCol{display:flex;flex-direction:column;gap:16px;max-width:302px}
+.ptrustLogo{width:118px;height:48px;min-height:48px;border:1px solid var(--border);border-radius:8px;
+  display:flex;align-items:center;justify-content:center;font-size:10px;line-height:14px;
+  letter-spacing:.1172px;color:var(--muted);text-align:center}
+.ptrustColP{font-size:14px;line-height:21.7px;letter-spacing:-.1504px;color:var(--muted)}
+.ptrustEnd{padding-top:64px;display:flex;flex-direction:column;gap:24px;width:100%}
+
+/* Scroll to Next Product · Figma 39:4376 / 39:4983 / 39:5268 */
+.pnextWrap{position:relative}
+.pnextStick{position:sticky;top:0;z-index:2;will-change:transform;background:var(--canvas)}
+body[data-vp="t"] .pnextStick,body[data-vp="m"] .pnextStick{position:static;transform:none!important}
+@media (prefers-reduced-motion:reduce){.pnextStick{position:static;transform:none!important}}
+.pnext{padding:80px 32px;display:flex;flex-direction:column;align-items:center;width:100%}
+body[data-vp="m"] .pnext{padding:56px 20px}
+.pnextIn{display:flex;align-items:flex-start;width:100%;gap:32px}
+body[data-vp="t"] .pnextIn,body[data-vp="m"] .pnextIn{flex-direction:column;gap:32px}
+.pnextL{width:662px;flex:0 1 662px;min-width:0;align-self:stretch;display:flex;flex-direction:column;align-items:flex-start}
+body[data-vp="t"] .pnextL,body[data-vp="m"] .pnextL{width:100%;flex:1 1 auto;align-self:auto}
+.pnextK{padding-top:5.5px;font-family:var(--mono);font-size:11px;line-height:17.6px;
+  letter-spacing:1.98px;text-transform:uppercase;color:var(--muted)}
+.pnextT{padding-top:8px;font-size:36px;font-weight:510;line-height:41.4px;letter-spacing:-.3509px;
+  color:var(--fg);width:457px;max-width:100%}
+body[data-vp="m"] .pnextT{font-size:26px;line-height:31px;width:100%}
+.pnextCard{background:#fff;border:1px solid var(--border);border-radius:24px;padding:32px;
+  display:flex;flex-direction:column;gap:32px;min-height:400px;width:518px;flex:0 1 518px;min-width:276px}
+body[data-vp="m"] .pnextCard{width:100%;flex:1 1 auto;padding:24px;gap:24px;min-height:0}
+.pnextTok{font-size:48px;font-weight:100;line-height:54px;letter-spacing:-2.8px;color:var(--fg);white-space:nowrap}
+body[data-vp="m"] .pnextTok{font-size:34px;line-height:38px;letter-spacing:-1.6px}
+.pnextIllu{aspect-ratio:438 / 341;width:100%;overflow:hidden;position:relative}
+.pnextIllu img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block}
+.pnextFoot{display:flex;flex-direction:column;gap:16px;width:100%;margin-top:auto}
+.pnextFT{font-size:32px;line-height:30.4px;letter-spacing:-.6353px;color:var(--fg)}
+body[data-vp="m"] .pnextFT{font-size:22px;line-height:26px}
+.pnextFP{font-size:14px;line-height:21.7px;letter-spacing:-.1504px;color:var(--muted);width:423px;max-width:100%}
+
+/* Solutions · пін на 4 кроки */
+.psolWrap{position:relative}
+.psolStick{position:sticky;top:0}
+body[data-vp="t"] .psolStick,body[data-vp="m"] .psolStick{position:static}
+.pprog i{cursor:default}
+.pprog button{background:#f3f3f3;border:0;border-radius:32px;flex:1 1 0;width:100%;padding:0;
+  display:block;position:relative;cursor:pointer;min-height:24px}
+.pprog button::after{content:"";position:absolute;inset:0 0 auto 0;height:0;background:var(--fg);
+  border-radius:32px;transition:height .3s cubic-bezier(.22,.61,.36,1)}
+.pprog button.done::after{height:100%}
+/* активний сегмент заповнюється рівно за прогресом скролу всередині кроку —
+   коротка транзиція лише згладжує рух, темп задає скрол */
+.pprog button[aria-current="true"]::after{height:var(--solFill,0%);transition:height .12s linear}
+.psolSwap{animation:psolIn .6s cubic-bezier(.22,.61,.36,1)}
+@keyframes psolIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){
+  .psolStick{position:static}
+  .psolSwap{animation:none}
+  .pprog button::after{transition:none}
+  .pprog button[aria-current="true"]::after{height:100%;transition:none}
+}
+
+.rel{position:relative}
+.sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}.b:hover{transform:none}}

@@ -1,0 +1,51 @@
+/* мега-меню — три колонки: сервіси рейкою, продукти картками, CTA-панель */
+.mega{border-top:1px solid var(--soft);background:var(--card);padding:32px;display:none}
+.mega.open{display:block}
+.mega .cols{display:grid;grid-template-columns:320px 1fr 420px;gap:40px;
+  max-width:1356px;margin:0 auto;align-items:start}
+body[data-vp="t"] .mega .cols{grid-template-columns:280px 1fr;gap:32px}
+body[data-vp="m"] .mega{padding:20px}
+body[data-vp="m"] .mega .cols{grid-template-columns:1fr;gap:24px}
+.mega h4{font-family:var(--mono);font-size:11px;line-height:17.6px;letter-spacing:1.98px;
+  text-transform:uppercase;color:var(--muted);margin-bottom:16px}
+/* ліва рейка: шість напрямів */
+.mrail{display:flex;flex-direction:column;gap:2px}
+.mrail a{display:flex;align-items:center;gap:16px;min-height:56px;padding:8px 16px;
+  border:1px solid transparent;border-radius:8px;text-decoration:none;color:var(--fg);
+  font-size:15px;font-weight:600;line-height:24px;letter-spacing:-.2344px}
+.mrail a .ic{width:24px;height:24px;flex:0 0 24px;border-radius:4px;
+  background-image:repeating-linear-gradient(45deg,rgba(0,0,0,.14) 0 1px,transparent 1px 5px)}
+.mrail a:hover{background:var(--fill)}
+.mrail a.on{border-color:var(--fg);background:none}
+.mrail a.on .ic{background-image:repeating-linear-gradient(45deg,rgba(0,0,0,.4) 0 1px,transparent 1px 5px)}
+/* середина: три продуктові картки */
+.mprod{display:flex;flex-direction:column;gap:8px}
+.mpcard{display:flex;gap:24px;align-items:center;padding:12px;border-radius:12px;
+  text-decoration:none;color:inherit}
+a.mpcard:hover{background:var(--fill)}
+.mpcard .shot{width:108px;height:72px;flex:0 0 108px;border-radius:8px;overflow:hidden;
+  background-image:repeating-linear-gradient(45deg,rgba(0,0,0,.05) 0 1px,transparent 1px 8px)}
+.mpcard .tx{min-width:0;display:flex;flex-direction:column;gap:4px}
+.mpcard .nm{font-size:17px;font-weight:550;line-height:27.2px;letter-spacing:-.5166px;
+  color:var(--fg);font-stretch:condensed}
+.mpcard .ds{font-size:14px;line-height:21.7px;letter-spacing:-.1504px;color:var(--muted)}
+.mpcard.soonCard{cursor:default;opacity:.62}
+.mpcard.soonCard:hover{background:none}
+.mpcard .badge{display:inline-flex;align-items:center;align-self:flex-start;margin-top:2px;
+  border:1px solid var(--border);border-radius:4px;padding:2px 8px;
+  font-family:var(--mono);font-size:10px;line-height:16px;letter-spacing:1px;
+  text-transform:uppercase;color:var(--muted2)}
+/* права колонка: заклик до контакту */
+.mcta{background:var(--fg);border-radius:16px;padding:32px;display:flex;flex-direction:column;
+  gap:16px;color:#fff}
+.mcta .strip{display:flex;gap:8px;margin-bottom:16px}
+.mcta .strip span{width:76px;height:76px;flex:0 0 76px;border-radius:8px;
+  background-image:repeating-linear-gradient(45deg,rgba(255,255,255,.16) 0 1px,transparent 1px 8px)}
+.mcta h5{font-size:28px;font-weight:510;line-height:34px;letter-spacing:-.3509px;color:#fff}
+.mcta p{font-size:14px;line-height:21.7px;letter-spacing:-.1504px;color:rgba(255,255,255,.72)}
+.mcta .b{align-self:flex-start;margin-top:8px;background:#fff;border:1px solid #fff;color:var(--fg);
+  min-height:48px;padding:0 24px;border-radius:8px;display:inline-flex;align-items:center;
+  font-size:13px;font-weight:700;line-height:20.8px;letter-spacing:1.2px;text-transform:uppercase;
+  text-decoration:none;font-family:var(--mono)}
+.mcta .b:hover{background:rgba(255,255,255,.88)}
+body[data-vp="t"] .mcta{grid-column:1 / -1}

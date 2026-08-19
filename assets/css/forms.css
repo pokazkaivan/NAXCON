@@ -1,0 +1,139 @@
+/* Kontakt · Karriere · Rechtliches — за системою, зібраною на перенесених сторінках:
+   шапка .svhero, кікер 11/1.98, заголовки 36/41.4, сіра плашка r32, рядки 76px,
+   чипи 12.5/20, кнопка 48px r8. Нового візуального словника не вводимо. */
+.gsec{padding:80px 32px;display:flex;flex-direction:column;align-items:flex-start;gap:48px;width:100%}
+body[data-vp="m"] .gsec{padding:48px 20px;gap:32px}
+.gsec.tight{gap:32px}
+.ghead{display:flex;flex-direction:column;gap:16px;align-items:flex-start;width:100%}
+.gpanel{background:#f3f3f3;border-radius:32px;padding:64px;width:100%;
+  display:flex;flex-direction:column;gap:32px;align-items:flex-start}
+body[data-vp="t"] .gpanel{padding:40px}
+body[data-vp="m"] .gpanel{padding:24px;border-radius:24px}
+.gcols{display:flex;gap:32px;align-items:flex-start;width:100%}
+body[data-vp="t"] .gcols,body[data-vp="m"] .gcols{flex-direction:column}
+.gcolA{flex:1 1 0;min-width:0}
+.gcolB{width:430px;flex:0 0 430px;min-width:0}
+body[data-vp="t"] .gcolB,body[data-vp="m"] .gcolB{width:100%;flex:1 1 auto}
+/* форма */
+.gform{display:flex;flex-direction:column;gap:24px;width:100%}
+.grow2{display:flex;gap:16px;width:100%}
+body[data-vp="m"] .grow2{flex-direction:column}
+.gfield{display:flex;flex-direction:column;gap:8px;flex:1 1 0;min-width:0}
+.glab{font-family:var(--mono);font-size:11px;line-height:17.6px;letter-spacing:1.98px;
+  text-transform:uppercase;color:var(--muted)}
+.glab .req{letter-spacing:0;text-transform:none;color:var(--muted2)}
+.ginp{min-height:48px;border:1px solid var(--border);border-radius:8px;background:#fff;
+  display:flex;align-items:center;padding:0 14px;font-size:14px;line-height:21.7px;
+  letter-spacing:-.1504px;color:var(--muted2)}
+.ginp.ta{min-height:140px;align-items:flex-start;padding:14px}
+.ghelp{font-size:12.5px;line-height:20px;letter-spacing:-.0366px;color:var(--muted2)}
+.gcheck{display:flex;gap:12px;align-items:flex-start}
+.gbox{width:20px;height:20px;flex:0 0 20px;border:1px solid var(--border);border-radius:4px;
+  background:#fff;margin-top:2px}
+.gcheck span{font-size:14px;line-height:21.7px;letter-spacing:-.1504px;color:var(--fg2)}
+.gcheck u{text-underline-offset:2px}
+/* таби документів — та сама геометрія, що в табах Services і рубриках News */
+.ltabs{display:flex;gap:32px;align-items:flex-start;width:100%;
+  border-bottom:1px solid var(--soft);overflow-x:auto}
+.ltabs button{appearance:none;background:none;border:0;border-bottom:2px solid transparent;
+  height:56px;padding:8px 16px 8px 0;display:flex;align-items:center;cursor:pointer;
+  flex:0 0 auto;opacity:.55;transition:border-color .2s ease,opacity .2s ease;
+  font-size:15px;font-weight:600;line-height:24px;letter-spacing:-.2344px;color:var(--fg);white-space:nowrap}
+.ltabs button[aria-current="true"]{border-bottom-color:#000;opacity:1}
+.ltabs button:hover{opacity:1}
+/* рядок вакансії — той самий каркас, що рядок новини, плюс дві колонки метаданих */
+.gjob{display:flex;align-items:center;gap:24px;min-height:76px;padding:16px 32px;
+  border-bottom:1px solid var(--soft);text-decoration:none;color:inherit;transition:background .18s ease}
+.gjob:hover{background:#f3f3f3}
+body[data-vp="m"] .gjob{flex-wrap:wrap;padding:16px 20px}
+.gjob .n{width:24px;flex:0 0 24px;font-family:var(--mono);font-size:10px;line-height:16px;color:var(--muted2)}
+.gjob .t{flex:1 1 0;min-width:0;font-size:17px;font-weight:550;line-height:27.2px;
+  letter-spacing:-.5166px;color:var(--fg);font-stretch:condensed}
+.gjob .m{font-family:var(--mono);font-size:11px;line-height:17.6px;color:var(--muted2);
+  flex:0 0 auto;white-space:nowrap}
+/* ── Karriere · Figma 125:16674 ── */
+/* дві картки: рекрутер і культура */
+.kwrap{padding:32px;display:flex;gap:16px;align-items:stretch;width:100%}
+body[data-vp="t"] .kwrap,body[data-vp="m"] .kwrap{flex-direction:column;padding:20px}
+.kbox{flex:1 1 0;min-width:0;background:#f3f3f3;border-radius:16px;padding:32px;
+  display:flex;flex-direction:column;justify-content:space-between;gap:32px}
+.kboxTop{display:flex;gap:32px;align-items:flex-start;width:100%}
+.kav{width:68px;height:68px;flex:0 0 68px;border:1px solid #e9e9e9;border-radius:32px;overflow:hidden;
+  background-image:repeating-linear-gradient(45deg,rgba(0,0,0,.05) 0 1px,transparent 1px 8px)}
+.kboxHead{flex:1 1 0;min-width:0;display:flex;flex-direction:column;gap:8px;align-items:flex-start}
+.kboxN{font-size:32px;font-weight:510;line-height:41.4px;letter-spacing:-.3509px;color:var(--fg)}
+.kboxT{font-size:36px;font-weight:510;line-height:41.4px;letter-spacing:-.3509px;color:var(--fg)}
+body[data-vp="m"] .kboxN,body[data-vp="m"] .kboxT{font-size:24px;line-height:31px}
+.kboxC{display:flex;flex-direction:column;gap:16px;align-items:flex-start}
+.kboxCK{font-family:var(--mono);font-weight:700;font-size:10px;line-height:16px;letter-spacing:1.4px;
+  text-transform:uppercase;color:var(--muted2)}
+.kboxLinks{display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap}
+.kboxLinks a{font-size:18px;font-weight:600;line-height:23.2px;letter-spacing:-.1912px;color:var(--fg);text-decoration:none}
+.kboxLinks a:hover{text-decoration:underline}
+.kboxP{padding-top:24px;font-size:14px;line-height:21.7px;letter-spacing:-.1504px;color:var(--muted);
+  width:502px;max-width:100%}
+/* ініціативна заявка */
+.kinit{margin:0 32px;background:#f3f3f3;border-radius:32px;padding:48px;
+  display:flex;gap:32px;align-items:flex-start}
+body[data-vp="t"] .kinit,body[data-vp="m"] .kinit{flex-direction:column;margin:0 20px;padding:24px;border-radius:24px}
+.kinitL{flex:1 1 0;min-width:0;display:flex;flex-direction:column;align-items:flex-start}
+.kinitT{font-size:36px;font-weight:510;line-height:41.4px;letter-spacing:.0182px;color:var(--fg)}
+.kinitP{padding-top:32px;font-size:14px;line-height:21.7px;letter-spacing:-.3008px;color:var(--muted);
+  width:373px;max-width:100%}
+.kinitR{width:630px;flex:0 0 630px;min-width:0;display:flex;flex-direction:column;gap:24px}
+body[data-vp="t"] .kinitR,body[data-vp="m"] .kinitR{width:100%;flex:1 1 auto}
+/* поле форми за макетом: 54px, підпис із приглушеним «(erforderlich)» */
+.kfield{display:flex;flex-direction:column;gap:8px;width:100%}
+.kinp{min-height:54px;border:1px solid var(--border);border-radius:8px;background:#fff;
+  display:flex;align-items:center;padding:0 14px;font-size:14px;line-height:21.7px;
+  letter-spacing:-.3008px;color:var(--muted2)}
+.klab{font-family:var(--mono);font-size:11px;line-height:17.6px;letter-spacing:1.98px;
+  text-transform:uppercase;color:var(--muted)}
+.klab .req{color:var(--muted2)}
+.kcheck{display:flex;gap:12px;align-items:flex-start;width:100%}
+.kcheck .box{width:20px;height:20px;flex:0 0 20px;border:1px solid var(--border);border-radius:4px;
+  background:#fff;margin-top:2px}
+.kcheck span{font-size:14px;line-height:21.7px;letter-spacing:-.3008px;color:var(--fg2);width:573px;max-width:100%}
+.kcheck u{text-underline-offset:2px}
+/* поле для файлу: зона вибору + стан «файл прикріплено» */
+.kfile{border:1px dashed rgba(0,0,0,.22);border-radius:8px;background:#fff;padding:20px;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.kfileL{display:flex;flex-direction:column;gap:4px;min-width:0}
+.kfileT{font-size:14px;line-height:21.7px;letter-spacing:-.3008px;color:var(--fg2)}
+.kfileH{font-size:12.5px;line-height:20px;letter-spacing:-.0366px;color:var(--muted2)}
+.kfileB{flex:0 0 auto;min-height:36px;padding:0 14px;border:1px solid var(--border);border-radius:8px;
+  background:#fff;display:inline-flex;align-items:center;font-size:13px;font-weight:600;
+  line-height:20.8px;color:var(--fg);cursor:pointer}
+.kfileB:hover{background:var(--fill)}
+.kfileRow{margin-top:8px;border:1px solid var(--border);border-radius:8px;background:#fff;
+  min-height:44px;padding:10px 14px;display:flex;align-items:center;gap:12px}
+.kfileRow .nm{flex:1 1 0;min-width:0;font-size:13.5px;line-height:21.6px;color:var(--fg);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.kfileRow .sz{font-family:var(--mono);font-size:11px;line-height:17.6px;color:var(--muted2);flex:0 0 auto}
+.kfileRow .rm{flex:0 0 auto;font-family:var(--mono);font-size:13px;color:var(--muted2);cursor:pointer}
+.kfileRow .rm:hover{color:var(--fg)}
+/* бічна картка вакансії */
+.jaside{position:sticky;top:120px;background:#f3f3f3;border-radius:32px;padding:32px;
+  display:flex;flex-direction:column;gap:24px}
+body[data-vp="t"] .jaside,body[data-vp="m"] .jaside{position:static;top:auto;border-radius:24px;padding:24px}
+.jasideT{font-size:24px;font-weight:510;line-height:32px;letter-spacing:-.3509px;color:var(--fg)}
+.jmeta{display:flex;flex-direction:column;gap:12px;width:100%}
+.jmeta .r{display:flex;gap:12px;align-items:baseline}
+.jmeta .k{width:110px;flex:0 0 110px;font-family:var(--mono);font-size:10px;line-height:17.6px;
+  letter-spacing:1.4px;text-transform:uppercase;color:var(--muted2)}
+.jmeta .v{flex:1 1 0;min-width:0;font-size:14px;line-height:21.7px;letter-spacing:-.1504px;color:var(--fg)}
+.gjob .go{display:flex;align-items:center;gap:6px;flex:0 0 auto;
+  font-size:13px;font-weight:600;line-height:20.8px;letter-spacing:-.0762px;color:var(--fg)}
+.gjob .go .ar{font-family:var(--mono);font-weight:700;font-size:13px}
+/* дрібні блоки-визначення для юридичних сторінок і опису вакансії */
+.gdef{display:flex;flex-direction:column;gap:24px;width:100%;max-width:800px}
+.gdef h3{font-size:24px;font-weight:510;line-height:32px;letter-spacing:-.3509px;color:var(--fg)}
+.gdef p{font-size:18px;line-height:28px;letter-spacing:-.3509px;color:var(--fg)}
+.gdef .meta{font-family:var(--mono);font-size:11px;line-height:17.6px;letter-spacing:1.98px;
+  text-transform:uppercase;color:var(--muted)}
+.gkv{display:flex;gap:16px;align-items:flex-start;width:100%}
+.gkv .k{width:170px;flex:0 0 170px;font-family:var(--mono);font-size:11px;line-height:27.2px;
+  letter-spacing:1.98px;text-transform:uppercase;color:var(--muted)}
+body[data-vp="m"] .gkv{flex-direction:column;gap:4px}
+body[data-vp="m"] .gkv .k{width:auto;flex:1 1 auto;line-height:17.6px}
+.gkv .v{flex:1 1 0;min-width:0;font-size:17px;line-height:27.2px;letter-spacing:-.5166px;color:var(--fg)}

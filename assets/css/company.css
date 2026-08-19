@@ -1,0 +1,111 @@
+/* Company · Figma 51:7783 — pixel parity */
+/* цифри: три колонки 500/363/300, тонке накреслення 112/124 */
+.cnum{padding:64px 32px;display:flex;flex-direction:column;align-items:center;width:100%}
+.cnumRow{display:flex;align-items:flex-start;justify-content:space-between;width:100%;gap:32px}
+body[data-vp="m"] .cnumRow{flex-direction:column;gap:40px}
+.cnumCol{display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;min-width:0}
+/* cn1..cn3, а не a/b/c: однолітерні класи вже зайняті глобальними .b (кнопка) і .c (картка) */
+.cnumCol.cn1{width:500px;flex:0 0 auto}.cnumCol.cn2{width:363px;flex:0 0 auto}.cnumCol.cn3{width:300px;flex:0 0 auto}
+body[data-vp="t"] .cnumCol,body[data-vp="m"] .cnumCol{width:auto;flex:1 1 auto}
+.cnumN{font-size:112px;font-weight:110;line-height:124px;letter-spacing:-6.72px;color:var(--fg);white-space:nowrap}
+body[data-vp="t"] .cnumN{font-size:80px;line-height:88px;letter-spacing:-4px}
+body[data-vp="m"] .cnumN{font-size:64px;line-height:70px;letter-spacing:-3px}
+.cnumL{padding-top:24px;font-size:16px;line-height:25.6px;letter-spacing:-.3125px;color:var(--fg2)}
+/* Vision і фінальна заява — плашка #f3f3f3 з радіусом 32 */
+.cquoteWrap{padding:32px;display:flex;flex-direction:column;align-items:flex-start;width:100%}
+.cquote{background:#f3f3f3;border-radius:32px;padding:112px 64px;width:100%;
+  display:flex;flex-direction:column;align-items:flex-start;gap:64px}
+body[data-vp="t"] .cquote{padding:64px 32px;gap:40px}
+body[data-vp="m"] .cquote{padding:40px 20px;gap:32px}
+.cquoteK{font-size:14px;line-height:21.7px;letter-spacing:-.1504px;color:var(--muted)}
+.cquoteT{padding-top:8px;font-size:64px;font-weight:400;line-height:80px;letter-spacing:-.3509px;
+  color:var(--fg);width:1168px;max-width:100%}
+body[data-vp="t"] .cquoteT{font-size:40px;line-height:50px}
+body[data-vp="m"] .cquoteT{font-size:30px;line-height:38px}
+.cquoteT .q{color:#7f8082}
+/* .cquoteP іде разом із .pintroT (заливка), тож розмір задаємо тут і він виграє за порядком */
+.cquoteP.pintroT{padding-top:0}
+.cquoteP{font-size:36px;line-height:48px;letter-spacing:-.3509px;color:var(--fg);width:100%}
+body[data-vp="t"] .cquoteP{font-size:26px;line-height:36px}
+body[data-vp="m"] .cquoteP{font-size:20px;line-height:29px}
+.cquoteP .dim{color:#7f8082}
+.cstate{align-items:center}
+.cstateT{font-size:64px;font-weight:400;line-height:80px;letter-spacing:-.3509px;color:var(--fg);
+  text-align:center;width:837px;max-width:100%}
+body[data-vp="t"] .cstateT{font-size:40px;line-height:50px}
+body[data-vp="m"] .cstateT{font-size:28px;line-height:36px}
+.cstateT .dim{color:#7f8082}
+/* блок «Unternehmen» — текст праворуч над зображенням 694 */
+.cmiss{padding:80px 32px;display:flex;flex-direction:column;align-items:center;width:100%}
+.cmissIn{display:flex;flex-direction:column;align-items:flex-end;gap:64px;width:100%}
+.cmissBox{width:694px;max-width:100%;display:flex;flex-direction:column;gap:32px;align-items:flex-start}
+.cmissHead{display:flex;flex-direction:column;align-items:flex-start;gap:8px;padding-top:8px;width:100%}
+.cmissT{font-size:36px;font-weight:510;line-height:41.4px;letter-spacing:-.3509px;color:var(--fg);
+  width:536px;max-width:100%}
+.cmissP{font-size:14px;line-height:21.7px;letter-spacing:-.1504px;color:var(--muted);width:550px;max-width:100%}
+.cshot{width:694px;max-width:100%;height:764px;border-radius:32px;overflow:hidden;position:relative;
+  display:flex;align-items:center;justify-content:center;
+  background-image:repeating-linear-gradient(45deg,rgba(0,0,0,.05) 0 1px,transparent 1px 8px)}
+body[data-vp="t"] .cshot,body[data-vp="m"] .cshot{width:100%;height:420px}
+.cshot span{font-size:12px;line-height:16.8px;color:var(--muted);text-align:center;padding:0 12px}
+/* Zertifikate — та сама шапка праворуч, список рядків 76px */
+.ccert{padding:0 32px;display:flex;flex-direction:column;align-items:flex-end;gap:64px;width:100%}
+.ccertHead{width:694px;max-width:100%;display:flex;flex-direction:column;gap:16px;align-items:flex-start}
+.ckick{font-family:var(--mono);font-size:11px;line-height:17.6px;letter-spacing:1.98px;
+  text-transform:uppercase;color:var(--muted)}
+.ctitle{font-size:36px;font-weight:510;line-height:41.4px;letter-spacing:-.3509px;color:var(--fg)}
+.ctitle.w584{width:584px;max-width:100%}
+/* Partner & Kunden — сітка 339 з накладеними бордерами */
+.cpart{padding:64px 32px;display:flex;flex-direction:column;align-items:flex-start;gap:64px;width:100%}
+.cpartGrid{display:flex;flex-wrap:wrap;align-content:flex-start;width:100%}
+.cpartCell{width:339px;flex:0 0 339px;padding:48px;display:flex;flex-direction:column;gap:16px;
+  align-items:flex-start;border:1px solid #e9e9e9;margin-right:-1px;margin-bottom:-1px}
+body[data-vp="t"] .cpartCell{width:50%;flex:0 0 50%;padding:32px}
+body[data-vp="m"] .cpartCell{width:100%;flex:0 0 100%;padding:24px}
+.cpartLogo{width:118px;height:48px;min-height:48px;border:1px solid var(--border);border-radius:8px;
+  display:flex;align-items:center;justify-content:center;overflow:hidden}
+.cpartLogo span{font-size:10px;line-height:14px;letter-spacing:.1172px;color:var(--muted);text-align:center;padding:0 12px}
+.cpartP{font-size:14px;line-height:21.7px;letter-spacing:-.1504px;color:var(--muted);width:100%}
+/* Standorte — мапа абсолютом ліворуч, контент колонкою 694 праворуч */
+.cloc{padding:80px 32px;display:flex;flex-direction:column;align-items:center;width:100%}
+.clocIn{position:relative;display:flex;flex-direction:column;align-items:flex-end;gap:16px;width:100%}
+.clocMap{position:absolute;left:0;top:0;width:494px;height:544px;border-radius:32px;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;
+  background-image:repeating-linear-gradient(45deg,rgba(0,0,0,.05) 0 1px,transparent 1px 8px)}
+body[data-vp="t"] .clocMap,body[data-vp="m"] .clocMap{position:static;width:100%;height:280px;margin-bottom:24px}
+.clocMap span{font-size:12px;line-height:16.8px;color:var(--muted)}
+.clocCol{width:694px;max-width:100%;display:flex;flex-direction:column;align-items:flex-start}
+.clocT{font-size:36px;font-weight:510;line-height:41.4px;letter-spacing:-.3509px;color:var(--fg);
+  width:584px;max-width:100%;white-space:pre-wrap;position:relative}
+.clocFlag{position:absolute;left:0;top:55px;width:27px;height:16px}
+.clocFlag img{width:100%;height:100%;display:block;object-fit:cover}
+.clocLead{padding-top:32px;font-size:18px;line-height:24px;letter-spacing:-.3509px;color:var(--fg);
+  width:536px;max-width:100%}
+.clocGrid{padding-top:112px;display:flex;flex-wrap:wrap;gap:64px;align-content:flex-start;width:100%}
+body[data-vp="m"] .clocGrid{padding-top:48px;gap:32px}
+.clocItem{width:188px;flex:0 0 188px;display:flex;gap:10px;align-items:flex-start}
+.clocPin{width:14px;height:18px;flex:0 0 14px;background:rgba(0,0,0,.3);margin-top:3px}
+.clocName{font-size:13.5px;font-weight:700;line-height:21.6px;letter-spacing:.1579px;color:var(--fg)}
+.clocCity{font-size:12.5px;font-weight:650;line-height:20px;letter-spacing:-.0366px;color:var(--fg2);
+  font-stretch:condensed;margin-left:6px}
+.clocHQ{display:inline-block;border:1px solid var(--border);border-radius:3px;padding:0 5px;margin-left:8px;
+  font-family:var(--mono);font-weight:700;font-size:9.5px;line-height:15.2px;letter-spacing:.95px;
+  text-transform:uppercase;color:var(--muted2);vertical-align:2px}
+.clocAddr{padding-top:2px;font-size:12.5px;line-height:18.75px;letter-spacing:-.0366px;color:var(--muted)}
+.clocEnd{width:693px;max-width:100%;display:flex;flex-direction:column;gap:24px;align-items:flex-start}
+.clocEndP{padding-top:64px;font-size:14px;line-height:21.7px;letter-spacing:-.1504px;color:var(--muted);
+  width:459px;max-width:100%}
+/* Das Team — три картки 441 на #f3f3f3 */
+/* лінію лишає тільки .band — інакше вона подвоюється й виглядає товстою */
+.cteam{padding:64px 32px 32px;display:flex;flex-direction:column;align-items:flex-start;gap:64px;width:100%}
+.cteamGrid{display:flex;flex-wrap:wrap;gap:16px;align-content:flex-start;width:100%}
+.cteamCard{width:441px;flex:0 0 441px;background:#f3f3f3;border-radius:32px;padding:32px;
+  display:flex;flex-direction:column;gap:32px;align-items:flex-start}
+body[data-vp="t"] .cteamCard{width:calc(50% - 8px);flex:0 0 calc(50% - 8px)}
+body[data-vp="m"] .cteamCard{width:100%;flex:0 0 100%;padding:24px;gap:24px}
+.cteamPh{width:297px;max-width:100%;height:395px;border-radius:16px;overflow:hidden;
+  background-image:repeating-linear-gradient(45deg,rgba(0,0,0,.05) 0 1px,transparent 1px 8px)}
+body[data-vp="m"] .cteamPh{width:100%;height:300px}
+.cteamMeta{display:flex;flex-direction:column;gap:4px;align-items:flex-start;width:100%;word-break:break-word}
+.cteamN{font-size:24px;font-weight:510;line-height:32px;letter-spacing:-.3509px;color:var(--fg);width:366px;max-width:100%}
+.cteamR{font-family:var(--mono);font-size:12px;line-height:17.6px;color:var(--muted);width:100%}
